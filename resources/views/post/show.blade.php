@@ -4,12 +4,8 @@
     <title>title</title>
 </head>
 <body>
-    @if ($num > 0)
-        больше нуля
-    @elseif ($num == 0)
-        ноль
-    @else
-        меньше нуля
-    @endif
+    @unless($isAuth)
+        вы еще не авторизованы
+    @endunless
 </body>
 </html>

@@ -7,7 +7,7 @@ class PostController extends Controller
 		public function show()
 		{
 			return view('post.show', [
-				'num' => -1
+				'isAuth' => true
 			]);
 		}
 	}
