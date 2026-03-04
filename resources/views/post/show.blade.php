@@ -6,10 +6,8 @@
 <body>
     @if ($isAuth)
         вы авторизованы
+    @else
+        вы не авторизованы
     @endif
-
-    <!-- @if (!$isAuth)
-    вы не авторизованы
-    @endif -->
 </body>
 </html>
