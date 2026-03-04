@@ -6,7 +6,7 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			return view('test', ["var1"=>1, "var2"=>2, "var3"=>3]);
+			return view('test', ['arr' => [1, 2]]);
 		}
 	}
 
