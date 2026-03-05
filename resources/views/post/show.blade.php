@@ -4,19 +4,14 @@
     <title>title</title>
 </head>
 <body>
-    <!-- Перебераем массив циклом. Работает -->
-    <!-- @foreach ($arr as $elem)
-        {{$elem}}
+    <!-- Работает -->
+    <!-- @foreach ($arr as $key=>$elem)
+        {{$key}} {{$elem}}
     @endforeach -->
 
-    <!-- Выводим каждый элемент массива в отдельном абзаце. Работает -->
-    <!-- @foreach ($arr as $elem)
-        <p>{{$elem}}</p>
-    @endforeach -->
 
-    <!-- Выведем элементы массива в виде списка. Работает-->
-     @foreach ($arr as $elem)
-        <li>{{$elem}}</li>
-    @endforeach
+    <!-- @foreach ($arr as $key=>$elem)
+        {{$key+1}}{{$elem}}
+    @endforeach -->
 </body>
 </html>
