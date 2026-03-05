@@ -4,8 +4,10 @@
     <title>title</title>
 </head>
 <body>
-    @unless($isAuth)
-        вы еще не авторизованы
-    @endunless
+    @if(count($arr) >= 1)
+        в массиве есть записи
+    @else
+        в массиве нет записей
+    @endif
 </body>
 </html>
