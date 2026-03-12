@@ -8,7 +8,7 @@
         {{ $elem }}
 
         @if ($elem == 3)
-            @break
+            @continue
         @endif
     @endforeach
 </body>
