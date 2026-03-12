@@ -5,13 +5,8 @@
 </head>
 <body>
     @foreach ($arr as $elem)
-        @if($loop->odd)
-            нечетная итерация
-        @endif
-
-        @if($loop->even)
-            четная итерация
-        @endif
+        {{ $loop->index }}
+        {{ $elem }}
     @endforeach
 </body>
 </html>
