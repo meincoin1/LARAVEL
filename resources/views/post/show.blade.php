@@ -4,10 +4,14 @@
     <title>title</title>
 </head>
 <body>
-    @forelse ($arr as $elem)
-        <p>{{ $elem }}</p>
-    @empty
-        <p>в массиве нет элементов</p>
-    @endforelse
+    @foreach ($arr as $elem)
+        @if($loop->first)
+            первая итерация
+        @endif
+
+        @if($loop->last)
+            последняя итерация
+        @endif
+    @endforeach
 </body>
 </html>
