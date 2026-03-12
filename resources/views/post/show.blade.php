@@ -5,8 +5,11 @@
 </head>
 <body>
     @foreach ($arr as $elem)
-        {{ $loop->count }}
         {{ $elem }}
+
+        @if ($elem == 3)
+            @break
+        @endif
     @endforeach
 </body>
 </html>

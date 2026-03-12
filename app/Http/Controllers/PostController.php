@@ -7,7 +7,7 @@ class PostController extends Controller
 		public function show()
 		{
 			return view('post.show', [
-				'arr'=>[1, 3, 5, 2]
+				'arr'=>[1, 2, 5, 6, 3, 7, 8, 10]
 			]);
 		}
 	}
