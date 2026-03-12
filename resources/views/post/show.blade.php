@@ -5,7 +5,7 @@
 </head>
 <body>
     @foreach ($arr as $elem)
-        {{ $loop->index }}
+        {{ $loop->count }}
         {{ $elem }}
     @endforeach
 </body>
