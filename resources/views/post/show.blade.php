@@ -5,12 +5,12 @@
 </head>
 <body>
     @foreach ($arr as $elem)
-        @if($loop->first)
-            первая итерация
+        @if($loop->odd)
+            нечетная итерация
         @endif
 
-        @if($loop->last)
-            последняя итерация
+        @if($loop->even)
+            четная итерация
         @endif
     @endforeach
 </body>
