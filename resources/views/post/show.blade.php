@@ -4,12 +4,8 @@
     <title>title</title>
 </head>
 <body>
-    @foreach ($arr as $elem)
-        {{ $elem }}
-
-        @if ($elem == 3)
-            @continue
-        @endif
-    @endforeach
+    @for ($i = 0; $i < 10; $i++)
+        значение счетчика: {{ $i }}
+    @endfor
 </body>
 </html>
