@@ -6,10 +6,9 @@ class PostController extends Controller
 	{
 		public function show()
 		{
+			$classCSS = 'green';
 			return view('post.show', [
-				"name"=>"Вика",
-				"age"=> 22,
-				"salary"=>200000
+				'classCSS'=>$classCSS
 			]);
 		}
 	}
