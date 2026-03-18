@@ -5,8 +5,8 @@
 </head>
 <body>
     <ul>
-    @foreach ($arr as $elem)
-        <li>{{ $elem}} = {{sqrt($elem)}}</li>
+    @foreach ($animals as $key => $value)
+        <li>{{ $key}}: {{$value}}</li>
     @endforeach
     </ul>
 </body>

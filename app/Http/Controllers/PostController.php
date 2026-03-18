@@ -6,8 +6,13 @@ class PostController extends Controller
 	{
 		public function show()
 		{
+			$animals = [
+				'cat'=>'кошка',
+				'dog'=>'собака',
+				'pig'=>'свинка'
+			];
 			return view('post.show', [
-				'arr' => [1, 2, 3, 4, 5, 6]
+				'animals'=> $animals
 			]);
 		}
 	}
