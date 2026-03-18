@@ -6,7 +6,7 @@
 <body>
     <ul>
     @foreach ($arr as $elem)
-        <li>{{ $elem * $elem }}</li>
+        <li>{{ $elem}} = {{sqrt($elem)}}</li>
     @endforeach
     </ul>
 </body>
