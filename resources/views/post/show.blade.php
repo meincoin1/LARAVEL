@@ -4,10 +4,12 @@
     <title>title</title>
 </head>
 <body>
-    @if ($age >= 18)
-        ура вам есть больше 18!!!!
+    @if ($age = 18)
+        ура вам есть 18!
+    @elseif ($age > 18)
+        вам больше 18
     @elseif ($age < 18)
-        вы еще не доросли\\
+        вам меньше 18
     @endif
 </body>
 </html>

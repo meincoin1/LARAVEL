@@ -7,7 +7,7 @@ class PostController extends Controller
 		public function show()
 		{
 			return view('post.show', [
-				'age'=>45
+				'age'=>34
 			]);
 		}
 	}
