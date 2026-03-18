@@ -4,10 +4,10 @@
     <title>title</title>
 </head>
 <body>
-    @if(count($arr)>0)
-        <p>Сумма элементов массива: {{array_sum($arr)}}</p>
-    @else
-        <p>Массив пуст</p>
-    @endif
+    <ul>
+    @foreach ($arr as $elem)
+        <li>{{ $elem }}</li>
+    @endforeach
+    </ul>
 </body>
 </html>
