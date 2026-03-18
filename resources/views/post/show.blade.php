@@ -4,8 +4,8 @@
     <title>title</title>
 </head>
 <body>
-    @php
-        echo '18.03.2025';
-    @endphp
+    <p>Имя: {{$user['name']}}<p>
+    <p>Возраст: {{$user['age']}}<p>
+    <p>Зарплата: {{$user['salary']}}<p>
 </body>
 </html>
