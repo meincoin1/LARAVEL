@@ -4,7 +4,8 @@
     <title>title</title>
 </head>
 <body>
-    <p>Страна: {{ $location['country'] ?? 'Россия'}}</p>
-    <p>Город: {{ $location['city'] ?? 'Москва'}}</p>
+    <p>Год: {{ !empty($year) ? $year: date('Y')}}</p>
+    <p>Месяц: {{ !empty($month) ? $month: date('m')}}</p>
+    <p>День: {{ !empty($day) ? $day: date('d')}}</p>
 </body>
 </html>
