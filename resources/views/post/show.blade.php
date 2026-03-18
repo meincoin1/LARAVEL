@@ -4,6 +4,6 @@
     <title>title</title>
 </head>
 <body>
-    <p>{{!! $str !!}}</p>
+    {{--<p>{{!! $str !!}}</p>--}}
 </body>
 </html>
