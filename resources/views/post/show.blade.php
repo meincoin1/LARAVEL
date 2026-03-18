@@ -2,12 +2,10 @@
 <html>
 <head>
     <title>title</title>
-    <style>
-        .red{color:red}
-        .green{color:green}
-        </style>
 </head>
 <body>
-    <p class = "{{ $classCSS }}">Красный текст</p>
+    <input value ="{{ $val1 }}">
+    <input value ="{{ $val2 }}">
+    <input value ="{{ $val3 }}">
 </body>
 </html>
