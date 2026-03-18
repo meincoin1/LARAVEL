@@ -4,8 +4,8 @@
     <title>title</title>
 </head>
 <body>
-    @php
-        echo 123;
-    @endphp
+    <p>{{ $name }}</p>
+    <p>{{ $age }}</p>
+    <p>{{ $salary }}</p>
 </body>
 </html>
