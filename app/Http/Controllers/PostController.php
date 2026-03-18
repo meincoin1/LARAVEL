@@ -6,8 +6,10 @@ class PostController extends Controller
 	{
 		public function show()
 		{
+			$location = [
+				'country' => 'Беларусь',];
 			return view('post.show', [
-				'city'=>'Омск'
+				'location'=>$location
 			]);
 		}
 	}

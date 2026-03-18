@@ -4,6 +4,7 @@
     <title>title</title>
 </head>
 <body>
-    <p>Город: {{$city}}</p>
+    <p>Страна: {{ $location['country'] ?? 'Россия'}}</p>
+    <p>Город: {{ $location['city'] ?? 'Москва'}}</p>
 </body>
 </html>
