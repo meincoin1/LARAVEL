@@ -2,10 +2,11 @@
 <html>
 <head>
     <title>title</title>
+    <style>
+        .red{color:red}
+    </style>
 </head>
 <body>
-    <input value ="{{ $val1 }}">
-    <input value ="{{ $val2 }}">
-    <input value ="{{ $val3 }}">
+    <p class = '{{ $class }}'>Сегодня чудеcный яркий день</p>
 </body>
 </html>
