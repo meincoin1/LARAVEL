@@ -6,9 +6,11 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			$class = 'red';
+			$text = 'Вконтакте';
+			$href = "vk.com";
 			return view('post.show', [
-				'class'=> $class
+				'text'=>$text,
+				'href'=>$href
 			]);
 		}
 	}

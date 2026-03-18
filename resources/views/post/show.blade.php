@@ -2,11 +2,8 @@
 <html>
 <head>
     <title>title</title>
-    <style>
-        .red{color:red}
-    </style>
 </head>
 <body>
-    <p class = '{{ $class }}'>Сегодня чудеcный яркий день</p>
+    <a href = "{{ $href }}">{{ $text }}</a>
 </body>
 </html>
