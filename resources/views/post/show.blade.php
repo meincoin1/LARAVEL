@@ -4,6 +4,8 @@
     <title>title</title>
 </head>
 <body>
-    <a href = "{{ $href }}">{{ $text }}</a>
+    @php
+        echo '18.03.2025';
+    @endphp
 </body>
 </html>
