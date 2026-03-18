@@ -4,6 +4,10 @@
     <title>title</title>
 </head>
 <body>
-    {{--<p>{{!! $str !!}}</p>--}}
+    @if ($age >= 18)
+        вы авторизованы
+    @elseif ($age < 18)
+        вы не авторизованы
+    @endif
 </body>
 </html>
