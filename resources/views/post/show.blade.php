@@ -4,6 +4,6 @@
     <title>title</title>
 </head>
 <body>
-    <p>Количество: {{count($arr)}}</p>
+    <p>Город: {{$city}}</p>
 </body>
 </html>
