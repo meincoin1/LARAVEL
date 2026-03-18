@@ -6,13 +6,8 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-				$user = [
-				'name'=> 'Дима',
-				'age'=>35,
-				'salary'=>150000
-				];
 			return view('post.show', [
-				'user'=>$user
+				'arr'=>[1, 2, 3, 4, 5]
 			]);
 		}
 	}

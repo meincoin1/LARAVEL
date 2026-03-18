@@ -4,8 +4,6 @@
     <title>title</title>
 </head>
 <body>
-    <p>Имя: {{$user['name']}}<p>
-    <p>Возраст: {{$user['age']}}<p>
-    <p>Зарплата: {{$user['salary']}}<p>
+    <p>Количество: {{count($arr)}}</p>
 </body>
 </html>
