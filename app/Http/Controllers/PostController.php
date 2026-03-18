@@ -6,11 +6,9 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-
+			$str = '<b>text</b>';
 			return view('post.show', [
-				'year'=> 2026,
-				'month' => '',
-				'day' => 18
+				'str'=>$str
 			]);
 		}
 	}
