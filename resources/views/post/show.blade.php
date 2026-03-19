@@ -4,10 +4,11 @@
     <title>title</title>
 </head>
 <body>
-    @forelse($users as $user)
-        <p>{{ $user }}</p>
-    @empty
-        <p>В массиве нет элементов</p>
-    @endforelse
+    <ul>
+        @foreach ($string as $str)
+            
+            <li> {{ $loop->index }} {{ $str }}</li>
+        @endforeach
+    </ul>
 </body>
 </html>

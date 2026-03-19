@@ -6,10 +6,9 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			// $users = ['Вика', 'Оля', 'Наташа'];
-			$users = [];
+			$string = ['Сегодня тепло', 'Сегодня холодно', 'Сегодня ни тепло, ни холодно'];
 			return view('post.show', [
-				'users'=>$users
+				'string'=>$string
 			]);
 		}
 	}
