@@ -2,16 +2,28 @@
 <html>
 <head>
     <title>title</title>
+    <style>
+        table {
+            width: 10%;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    @if (is_array($data))
-        <ul>
-            @foreach ($data as $number)
-                <li>{{ $number}}</li>
-            @endforeach
-        </ul>
-        @else
-            <p>{{ $data }}</p>
-    @endif
+    <table>
+        @foreach ($matrix as $row)
+            <tr>
+                @foreach ($row as $cell)
+                    <td>{{  $cell }}</td>
+                @endforeach
+            </tr>
+        @endforeach
+    </table>
 </body>
 </html>
