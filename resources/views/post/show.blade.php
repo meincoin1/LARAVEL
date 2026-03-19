@@ -4,13 +4,14 @@
     <title>title</title>
 </head>
 <body>
-
-    <ul>
-    @foreach ($arr as $elem)
-        @if($elem % 2 == 0)
-            <li>{{ $elem }}</li>
-        @endif
-    @endforeach
-    </ul>
+    @if (is_array($data))
+        <ul>
+            @foreach ($data as $number)
+                <li>{{ $number}}</li>
+            @endforeach
+        </ul>
+        @else
+            <p>{{ $data }}</p>
+    @endif
 </body>
 </html>

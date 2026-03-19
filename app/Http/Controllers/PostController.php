@@ -6,8 +6,9 @@ class PostController extends Controller
 	{
 		public function show()
 		{
+			$data = [1];
 			return view('post.show', [
-				'arr' => [1, 2, 3, 4, 5, 6]
+				'data'=>$data
 			]);
 		}
 	}
