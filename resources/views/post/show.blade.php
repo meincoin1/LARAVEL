@@ -7,7 +7,7 @@
     <ul>
         @foreach ($string as $str)
             
-            <li> {{ $loop->index }} {{ $str }}</li>
+            <li> {{ $loop->iteration}} {{ $str }}</li>
         @endforeach
     </ul>
 </body>
