@@ -12,11 +12,14 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3, 4, 5, 6, 7]);
+$collection = collect(str_split('AABBCCCD'));
 
-$chunks = $collection->chunk(4);
+$chunks = $collection->chunkWhile(function ($value, $key, $chunk) {
+    return $value === $chunk->last();
+});
 
 $chunks->all();
+
 
 dd($collection)
 
