@@ -4,12 +4,8 @@
     <title>title</title>
 </head>
 <body>
-<ul>
-    @foreach($numbers as $number)
-        @if($number != 0)
-            <li>{{ $number }}</li>
-        @endif
-    @endforeach
-</ul>
+    @for($i = 1; $i <= 10; $i++)
+        <p>{{ $i }}</p>
+    @endfor
 </body>
 </html>
