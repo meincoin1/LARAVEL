@@ -6,7 +6,7 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			$numbers = [10, 20, 30, 40, 50, 60, 70];
+			$numbers = [5, 8, 12, 0, 7, 3, 9];
 			return view('post.show', [
 				'numbers'=>$numbers
 			]);
