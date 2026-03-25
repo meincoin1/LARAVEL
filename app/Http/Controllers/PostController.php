@@ -12,12 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['name', 'age']);
+$collection = collect(['John Doe']);
 
-$combined = $collection->combine(['George', 29]);
+$concatenated = $collection->concat(['Jane Doe'])->concat(['name' => 'Johnny Doe']);
 
-$combined->all();
+$concatenated->all();
 
-dd($combined)
+dd($concatenated)
 
 ?>
