@@ -2,27 +2,14 @@
 <html>
 <head>
     <title>title</title>
-    <style>
-        .first {
-            color: red;
-            font-weight: 800;
-        }
-        .last {
-            color: green;
-            font-size: 20px;
-        }
-    </style>
 </head>
 <body>
-    <ul>
-        @foreach ($string as $str)
-            @php
-            $class = '';
-            if($loop->first) $class = 'first';
-            if($loop->last) $class = 'last';
-            @endphp
-            <li class = "{{ $class }}">{{ $str }}</li>
-        @endforeach
-    </ul>
+  @foreach($numbers as $number)
+        @if($loop->index >= count($numbers) - 3)
+            <i><b>{{ $number }}</b></i><br>
+        @else
+            <b>{{ $number }}</b><br>
+        @endif
+    @endforeach
 </body>
 </html>

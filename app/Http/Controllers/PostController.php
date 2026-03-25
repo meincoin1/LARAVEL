@@ -6,9 +6,9 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			$string = ['Сегодня тепло', 'Сегодня холодно', 'Сегодня ни тепло, ни холодно'];
+			$numbers = [1, 2, 3, 4, 5, 6, 7];
 			return view('post.show', [
-				'string'=>$string
+				'numbers'=>$numbers
 			]);
 		}
 	}
