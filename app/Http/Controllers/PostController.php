@@ -12,12 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['John Doe']);
+$collection = collect(['name' => 'Desk', 'price' => 100]);
 
-$concatenated = $collection->concat(['Jane Doe'])->concat(['name' => 'Johnny Doe']);
+$collection->contains('Desk');
 
-$concatenated->all();
+$collection->contains('New York');
 
-dd($concatenated)
+dd($collection)
 
 ?>
