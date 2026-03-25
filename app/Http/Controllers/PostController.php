@@ -12,16 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-]);
+$collectionA = collect([1, 2, 3]);
 
-$collapsed = $collection->collapse();
+$collectionB = $collectionA->collect();
 
-$collapsed->all();
+$collectionB->all();
 
-dd($collection)
+dd($collectionA)
 
 ?>
