@@ -12,14 +12,15 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(str_split('AABBCCCD'));
+$collection = collect([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]);
 
-$chunks = $collection->chunkWhile(function ($value, $key, $chunk) {
-    return $value === $chunk->last();
-});
+$collapsed = $collection->collapse();
 
-$chunks->all();
-
+$collapsed->all();
 
 dd($collection)
 
