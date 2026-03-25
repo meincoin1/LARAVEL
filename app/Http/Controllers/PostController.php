@@ -12,11 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['name' => 'Desk', 'price' => 100]);
+$collection = collect([
+    ['product' => 'Desk', 'price' => 200],
+    ['product' => 'Chair', 'price' => 100],
+]);
 
-$collection->contains('Desk');
-
-$collection->contains('New York');
+$collection->contains('product', 'Bookcase');
 
 dd($collection)
 
