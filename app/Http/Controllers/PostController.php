@@ -12,10 +12,16 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
+$collection = collect([
+    ['account_id' => 'account-x10', 'product' => 'Chair'],
+    ['account_id' => 'account-x10', 'product' => 'Bookcase'],
+    ['account_id' => 'account-x11', 'product' => 'Desk'],
+]);
 
-$value = $collection->get('age', 34);
+$grouped = $collection->groupBy('account_id');
 
-dd($value)
+$grouped->all();
+
+dd($grouped)
 
 ?>
