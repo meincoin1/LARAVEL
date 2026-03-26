@@ -12,11 +12,13 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$lazyCollection = collect([1, 2, 3, 4])->lazy();
+$collection = collect([1, 2, 3, 4, 5]);
 
-get_class($lazyCollection);
+$multiplied = $collection->map(function ($item, $key) {
+    return $item * 2;
+});
 
-$lazyCollection->all();
+$multiplied->all();
 
 dd($lazyCollection)
 
