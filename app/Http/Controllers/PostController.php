@@ -13,16 +13,24 @@ Collection::macro('toUpper', function () {
 });
 
 $collection = collect([
-    'name' => 'taylor',
-    'languages' => [
-        'php', 'javascript'
-    ]
+    'Apple' => [
+        [
+            'name' => 'iPhone 6S',
+            'brand' => 'Apple'
+        ],
+    ],
+    'Samsung' => [
+        [
+            'name' => 'Galaxy S7',
+            'brand' => 'Samsung'
+        ],
+    ],
 ]);
 
-$flattened = $collection->flatten();
+$products = $collection->flatten(1);
 
-$flattened->all();
+$products->values()->all();
 
-dd($flattened)
+dd($products)
 
 ?>
