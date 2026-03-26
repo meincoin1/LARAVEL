@@ -12,9 +12,9 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['John Doe', 'Jane Doe']);
+$collection = collect(['a', 'b', 'a', 'c', 'b']);
 
-$collection->dump();
+$collection->duplicates();
 
 dd($collection)
 
