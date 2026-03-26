@@ -18,7 +18,9 @@ $collection = collect([
     ['account_id' => 'account-x11', 'product' => 'Desk'],
 ]);
 
-$grouped = $collection->groupBy('account_id');
+$grouped = $collection->groupBy(function ($item, $key) {
+    return substr($item['account_id'], -3);
+});
 
 $grouped->all();
 
