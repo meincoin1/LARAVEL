@@ -14,8 +14,8 @@ Collection::macro('toUpper', function () {
 
 $collection = collect([['John Doe', 35], ['Jane Doe', 33]]);
 
-$collection->eachSpread(function ($name, $age) {
-    return false;
+collect([1, 2, 3, 4])->every(function ($value, $key) {
+    return $value > 2;
 });
 
 dd($collection)
