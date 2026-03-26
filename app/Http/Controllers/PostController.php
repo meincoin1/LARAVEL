@@ -13,16 +13,18 @@ Collection::macro('toUpper', function () {
 });
 
 $collection = collect([
-    'color' => 'orange',
-    'type' => 'fruit',
-    'remain' => 6,
+    'one' => 10,
+    'two' => 20,
+    'three' => 30,
+    'four' => 40,
+    'five' => 50,
 ]);
 
-$diff = $collection->diffAssoc([
-    'color' => 'yellow',
-    'type' => 'fruit',
-    'remain' => 3,
-    'used' => 6,
+$diff = $collection->diffKeys([
+    'two' => 2,
+    'four' => 4,
+    'six' => 6,
+    'eight' => 8,
 ]);
 
 $diff->all();
