@@ -11,24 +11,12 @@ Collection::macro('toUpper', function () {
         return Str::upper($value);
     });
 });
+$collection = collect([1, 2, 3, 4, 5]);
 
-$collection = collect([
-    'one' => 10,
-    'two' => 20,
-    'three' => 30,
-    'four' => 40,
-    'five' => 50,
-]);
+$collection->doesntContain(function ($value, $key) {
+    return $value < 5;
+});
 
-$diff = $collection->diffKeys([
-    'two' => 2,
-    'four' => 4,
-    'six' => 6,
-    'eight' => 8,
-]);
-
-$diff->all();
-
-dd($diff)
+dd($collection)
 
 ?>
