@@ -10,14 +10,14 @@ Collection::macro('toUpper', function () {
     return $this->map(function ($value) {
         return Str::upper($value);
     });
-});
+})
 
-$collection = collect([1, 2]);
+$collection = collect([1, 2, 3, 4, 5]);
 
-$matrix = $collection->crossJoin(['a', 'b'], ['I', 'II']);
+$diff = $collection->diff([2, 4, 6, 8]);
 
-$matrix->all();
+$diff->all();
 
-dd($matrix)
+dd($collection)
 
 ?>
