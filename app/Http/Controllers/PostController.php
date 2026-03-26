@@ -12,14 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$employees = collect([
-    ['email' => 'abigail@example.com', 'position' => 'Developer'],
-    ['email' => 'james@example.com', 'position' => 'Designer'],
-    ['email' => 'victoria@example.com', 'position' => 'Developer'],
-]);
+$collection = collect([['John Doe', 35], ['Jane Doe', 33]]);
 
-$employees->duplicates('position');
+$collection->eachSpread(function ($name, $age) {
+    //
+});
 
-dd($employees)
+dd($collection)
 
 ?>
