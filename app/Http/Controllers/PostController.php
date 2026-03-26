@@ -14,7 +14,7 @@ Collection::macro('toUpper', function () {
 
 $collection = collect([1, 2]);
 
-$matrix = $collection->crossJoin(['a', 'b']);
+$matrix = $collection->crossJoin(['a', 'b'], ['I', 'II']);
 
 $matrix->all();
 
