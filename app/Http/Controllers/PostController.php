@@ -12,10 +12,14 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['a', 'b', 'a', 'c', 'b']);
+$employees = collect([
+    ['email' => 'abigail@example.com', 'position' => 'Developer'],
+    ['email' => 'james@example.com', 'position' => 'Designer'],
+    ['email' => 'victoria@example.com', 'position' => 'Developer'],
+]);
 
-$collection->duplicates();
+$employees->duplicates('position');
 
-dd($collection)
+dd($employees)
 
 ?>
