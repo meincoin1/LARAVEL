@@ -14,7 +14,7 @@ Collection::macro('toUpper', function () {
 
 $collection = collect(['account_id' => 1, 'product' => 'Desk', 'amount' => 5]);
 
-$collection->has(['amount', 'price']);
+$collection->hasAny(['name', 'price']);
 
 dd($collection)
 
