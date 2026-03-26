@@ -12,25 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([
-    'Apple' => [
-        [
-            'name' => 'iPhone 6S',
-            'brand' => 'Apple'
-        ],
-    ],
-    'Samsung' => [
-        [
-            'name' => 'Galaxy S7',
-            'brand' => 'Samsung'
-        ],
-    ],
-]);
+$collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
 
-$products = $collection->flatten(1);
+$flipped = $collection->flip();
 
-$products->values()->all();
+$flipped->all();
 
-dd($products)
+dd($flipped)
 
 ?>
