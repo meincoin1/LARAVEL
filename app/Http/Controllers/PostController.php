@@ -13,14 +13,17 @@ Collection::macro('toUpper', function () {
 });
 
 $collection = collect([
-    ['name' => 'Regena', 'age' => null],
-    ['name' => 'Linda', 'age' => 14],
-    ['name' => 'Diego', 'age' => 23],
-    ['name' => 'Linda', 'age' => 84],
+    ['name' => 'Sally'],
+    ['school' => 'Arkansas'],
+    ['age' => 28]
 ]);
 
-$collection->firstWhere('name', 'Linda');
+$flattened = $collection->flatMap(function ($values) {
+    return array_map('strtoupper', $values);
+});
 
-dd($collection)
+$flattened->all();
+
+dd($flattened)
 
 ?>
