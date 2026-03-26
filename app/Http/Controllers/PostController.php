@@ -17,7 +17,9 @@ $collection = collect([
     ['product_id' => 'prod-200', 'name' => 'Chair'],
 ]);
 
-$keyed = $collection->keyBy('product_id');
+$keyed = $collection->keyBy(function ($item, $key) {
+    return strtoupper($item['product_id']);
+});
 
 $keyed->all();
 
