@@ -12,12 +12,10 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+$collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
 
-$chunk = $collection->forPage(2, 3);
+$value = $collection->get('name');
 
-$chunk->all();
-
-dd($chunk)
+dd($value)
 
 ?>
