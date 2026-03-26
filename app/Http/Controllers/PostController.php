@@ -12,12 +12,9 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([
-    ['product' => 'Desk', 'price' => 200],
-    ['product' => 'Chair', 'price' => 100],
-]);
+$collection = collect(['John Doe', 'Jane Doe']);
 
-$collection->doesntContain('product', 'Bookcase');
+$collection->dump();
 
 dd($collection)
 
