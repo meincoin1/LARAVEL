@@ -12,9 +12,11 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['product_id' => 1, 'price' => 100, 'discount' => false]);
+$collection = collect([1, 2, 3, 4]);
 
-$filtered = $collection->except(['price', 'discount']);
+$filtered = $collection->filter(function ($value, $key) {
+    return $value > 2;
+});
 
 $filtered->all();
 
