@@ -13,16 +13,14 @@ Collection::macro('toUpper', function () {
 });
 
 $collection = collect([
-    ['product_id' => 'prod-100', 'name' => 'Desk'],
-    ['product_id' => 'prod-200', 'name' => 'Chair'],
+    'prod-100' => ['product_id' => 'prod-100', 'name' => 'Desk'],
+    'prod-200' => ['product_id' => 'prod-200', 'name' => 'Chair'],
 ]);
 
-$keyed = $collection->keyBy(function ($item, $key) {
-    return strtoupper($item['product_id']);
-});
+$keys = $collection->keys();
 
-$keyed->all();
+$keys->all();;
 
-dd($keyed)
+dd($keys)
 
 ?>
