@@ -12,9 +12,9 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([['John Doe', 35], ['Jane Doe', 33]]);
+$collection = collect([]);
 
-collect([1, 2, 3, 4])->every(function ($value, $key) {
+$collection->every(function ($value, $key) {
     return $value > 2;
 });
 
