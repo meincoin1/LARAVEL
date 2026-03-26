@@ -12,7 +12,11 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3, 4, 5])->implode('-');
+$collection = collect(['Desk', 'Sofa', 'Chair']);
+
+$intersect = $collection->intersect(['Desk', 'Chair', 'Bookcase']);
+
+$intersect->all();
 
 dd($collection)
 
