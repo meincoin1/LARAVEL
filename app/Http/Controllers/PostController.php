@@ -12,14 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['alice@gmail.com', 'bob@yahoo.com', 'carlos@gmail.com']);
+$collection = collect([1, 2]);
 
-$counted = $collection->countBy(function ($email) {
-    return substr(strrchr($email, "@"), 1);
-});
+$matrix = $collection->crossJoin(['a', 'b']);
 
-$counted->all();
+$matrix->all();
 
-dd($counted)
+dd($matrix)
 
 ?>
