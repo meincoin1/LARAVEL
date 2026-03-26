@@ -14,7 +14,7 @@ Collection::macro('toUpper', function () {
 
 $collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
 
-$value = $collection->get('name');
+$value = $collection->get('age', 34);
 
 dd($value)
 
