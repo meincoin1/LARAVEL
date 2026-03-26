@@ -15,7 +15,7 @@ Collection::macro('toUpper', function () {
 $collection = collect([['John Doe', 35], ['Jane Doe', 33]]);
 
 $collection->eachSpread(function ($name, $age) {
-    //
+    return false;
 });
 
 dd($collection)
