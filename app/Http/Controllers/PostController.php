@@ -12,14 +12,26 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3, 4, 5]);
+class Currency
+{
+    /**
+     * Создать новый экземпляр валюты.
+     *
+     * @param  string  $code
+     * @return void
+     */
+    function __construct(string $code)
+    {
+        $this->code = $code;
+    }
+}
 
-$multiplied = $collection->map(function ($item, $key) {
-    return $item * 2;
-});
+$collection = collect(['USD', 'EUR', 'GBP']);
 
-$multiplied->all();
+$currencies = $collection->mapInto(Currency::class);
 
-dd($lazyCollection)
+$currencies->all();
+
+dd($currencies)
 
 ?>
