@@ -12,9 +12,11 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3, null, false, '', 0, []]);
+$collection = collect([1, 2, 3, 4]);
 
-$collection->filter()->all();
+collect([1, 2, 3, 4])->first(function ($value, $key) {
+    return $value > 2;
+});
 
 dd($collection)
 
