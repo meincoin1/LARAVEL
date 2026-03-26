@@ -14,10 +14,10 @@ Collection::macro('toUpper', function () {
 
 $collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
 
-$flipped = $collection->flip();
+$collection->forget('name');
 
-$flipped->all();
+$collection->all();
 
-dd($flipped)
+dd($collection)
 
 ?>
