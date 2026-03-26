@@ -17,10 +17,11 @@ $collection = collect([
     'prod-200' => ['product_id' => 'prod-200', 'name' => 'Chair'],
 ]);
 
-$keys = $collection->keys();
+collect([1, 2, 3, 4])->last(function ($value, $key) {
+    return $value < 3;
+});
 
-$keys->all();;
 
-dd($keys)
+dd($collection)
 
 ?>
