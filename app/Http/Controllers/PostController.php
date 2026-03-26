@@ -12,16 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([
-    'prod-100' => ['product_id' => 'prod-100', 'name' => 'Desk'],
-    'prod-200' => ['product_id' => 'prod-200', 'name' => 'Chair'],
-]);
+$lazyCollection = collect([1, 2, 3, 4])->lazy();
 
-collect([1, 2, 3, 4])->last(function ($value, $key) {
-    return $value < 3;
-});
+get_class($lazyCollection);
 
+$lazyCollection->all();
 
-dd($collection)
+dd($lazyCollection)
 
 ?>
