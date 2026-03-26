@@ -11,11 +11,12 @@ Collection::macro('toUpper', function () {
         return Str::upper($value);
     });
 });
-$collection = collect([1, 2, 3, 4, 5]);
 
-$collection->doesntContain(function ($value, $key) {
-    return $value < 5;
-});
+$collection = collect(['name' => 'Desk', 'price' => 100]);
+
+$collection->doesntContain('Table');
+
+$collection->doesntContain('Desk');
 
 dd($collection)
 
