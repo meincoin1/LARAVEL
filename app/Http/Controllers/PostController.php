@@ -13,14 +13,13 @@ Collection::macro('toUpper', function () {
 });
 
 $collection = collect([
-    ['name' => 'Sally'],
-    ['school' => 'Arkansas'],
-    ['age' => 28]
+    'name' => 'taylor',
+    'languages' => [
+        'php', 'javascript'
+    ]
 ]);
 
-$flattened = $collection->flatMap(function ($values) {
-    return array_map('strtoupper', $values);
-});
+$flattened = $collection->flatten();
 
 $flattened->all();
 
