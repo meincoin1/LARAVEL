@@ -12,12 +12,16 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['Desk', 'Sofa', 'Chair']);
+$collection = collect([
+    'serial' => 'UX301', 'type' => 'screen', 'year' => 2009,
+]);
 
-$intersect = $collection->intersect(['Desk', 'Chair', 'Bookcase']);
+$intersect = $collection->intersectByKeys([
+    'reference' => 'UX404', 'type' => 'tab', 'year' => 2011,
+]);
 
 $intersect->all();
 
-dd($collection)
+dd($intersect)
 
 ?>
