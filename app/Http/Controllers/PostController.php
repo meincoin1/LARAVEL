@@ -12,10 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3, 4]);
+$collection = collect([1, 2, 2, 2, 3]);
 
-$collection->count();
+$counted = $collection->countBy();
 
-dd($collection)
+$counted->all();
+
+dd($counted)
 
 ?>
