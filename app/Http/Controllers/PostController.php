@@ -13,15 +13,14 @@ Collection::macro('toUpper', function () {
 });
 
 $collection = collect([
-    'serial' => 'UX301', 'type' => 'screen', 'year' => 2009,
+    ['product_id' => 'prod-100', 'name' => 'Desk'],
+    ['product_id' => 'prod-200', 'name' => 'Chair'],
 ]);
 
-$intersect = $collection->intersectByKeys([
-    'reference' => 'UX404', 'type' => 'tab', 'year' => 2011,
-]);
+$keyed = $collection->keyBy('product_id');
 
-$intersect->all();
+$keyed->all();
 
-dd($intersect)
+dd($keyed)
 
 ?>
