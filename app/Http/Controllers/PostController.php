@@ -12,9 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['account_id' => 1, 'product' => 'Desk', 'amount' => 5]);
+$collection = collect([
+    ['account_id' => 1, 'product' => 'Desk'],
+    ['account_id' => 2, 'product' => 'Chair'],
+]);
 
-$collection->hasAny(['name', 'price']);
+$collection->implode('product', ', ');
 
 dd($collection)
 
