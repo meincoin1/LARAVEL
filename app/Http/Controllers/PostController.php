@@ -10,14 +10,23 @@ Collection::macro('toUpper', function () {
     return $this->map(function ($value) {
         return Str::upper($value);
     });
-})
+});
 
-$collection = collect([1, 2, 3, 4, 5]);
+$collection = collect([
+    'color' => 'orange',
+    'type' => 'fruit',
+    'remain' => 6,
+]);
 
-$diff = $collection->diff([2, 4, 6, 8]);
+$diff = $collection->diffAssoc([
+    'color' => 'yellow',
+    'type' => 'fruit',
+    'remain' => 3,
+    'used' => 6,
+]);
 
 $diff->all();
 
-dd($collection)
+dd($diff)
 
 ?>
