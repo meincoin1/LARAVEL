@@ -12,18 +12,10 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$mode = collect([
-    ['foo' => 10],
-    ['foo' => 10],
-    ['foo' => 20],
-    ['foo' => 40]
-])->mode('foo');
+$collection = collect(['a', 'b', 'c', 'd', 'e', 'f']);
 
+$collection->nth(4);
 
-$mode = collect([1, 1, 2, 4])->mode();
-
-$mode = collect([1, 1, 2, 2])->mode();
-
-dd($mode)
+dd($collection)
 
 ?>
