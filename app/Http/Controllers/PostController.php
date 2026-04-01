@@ -12,16 +12,16 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['A', 'B', 'C']);
+$collection = collect([1, 2, 3, 4, 5, 6]);
 
-$filtered = $collection->pad(5, 0);
+[$underThree, $equalOrAboveThree] = $collection->partition(function ($i) {
+    return $i < 3;
+});
 
-$filtered->all();
+$underThree->all();
 
-$filtered = $collection->pad(-5, 0);
+$equalOrAboveThree->all();
 
-$filtered->all();
-
-dd($filtered)
+dd($equalOrAboveThree)
 
 ?>
