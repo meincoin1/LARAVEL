@@ -12,17 +12,15 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3]);
-
-$result = $collection->pipeThrough([
-    function ($collection) {
-        return $collection->merge([4, 5]);
-    },
-    function ($collection) {
-        return $collection->sum();
-    },
+$collection = collect([
+    ['product_id' => 'prod-100', 'name' => 'Desk'],
+    ['product_id' => 'prod-200', 'name' => 'Chair'],
 ]);
 
-dd($result)
+$plucked = $collection->pluck('name');
+
+$plucked->all();
+
+dd($plucked)
 
 ?>
