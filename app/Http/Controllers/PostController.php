@@ -23,8 +23,8 @@ $collection = collect([
 ]);
 
 $sorted = $collection->sortBy([
-    ['name', 'asc'],
-    ['age', 'desc'],
+    fn ($a, $b) => $a['name'] <=> $b['name'],
+    fn ($a, $b) => $b['age'] <=> $a['age'],
 ]);
 
 $sorted->values()->all();
