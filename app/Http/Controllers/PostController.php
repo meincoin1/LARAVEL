@@ -16,15 +16,16 @@ class PostController extends Controller
         });
 
 $collection = collect([
-    ['title' => 'Item 1'],
-    ['title' => 'Item 12'],
-    ['title' => 'Item 3'],
+    ['name' => 'Desk', 'colors' => ['Black', 'Mahogany']],
+    ['name' => 'Chair', 'colors' => ['Black']],
+    ['name' => 'Bookcase', 'colors' => ['Red', 'Beige', 'Brown']],
 ]);
 
-$sorted = $collection->sortBy('title', SORT_NATURAL);
+$sorted = $collection->sortBy(function ($product, $key) {
+    return count($product['colors']);
+});
 
 $sorted->values()->all();
-
 
 dd($sorted);
     }
