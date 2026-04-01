@@ -17,8 +17,8 @@ class PostController extends Controller
 
 $collection = collect([1, 2, 3, 4]);
 
-$subset = $collection->skipUntil(function ($item) {
-    return $item >= 3;
+$subset = $collection->skipWhile(function ($item) {
+    return $item <= 3;
 });
 
 $subset->all();
