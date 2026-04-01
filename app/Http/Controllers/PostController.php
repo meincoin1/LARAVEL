@@ -16,12 +16,12 @@ class PostController extends Controller
         });
 
 $collection = collect([
-    'id' => 22345,
+    'ID' => 22345,
     'first' => 'John',
     'last' => 'Doe',
 ]);
 
-$sorted = $collection->sortKeys();
+$sorted = $collection->sortKeysUsing('strnatcasecmp');
 
 $sorted->all();
 
