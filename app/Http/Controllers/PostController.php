@@ -12,10 +12,17 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['a', 'b', 'c', 'd', 'e', 'f']);
+$collection = collect([
+    'product_id' => 1,
+    'name' => 'Desk',
+    'price' => 100,
+    'discount' => false
+]);
 
-$collection->nth(4);
+$filtered = $collection->only(['product_id', 'name']);
 
-dd($collection)
+$filtered->all();
+
+dd($filtered)
 
 ?>
