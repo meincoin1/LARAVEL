@@ -15,24 +15,15 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([
-    'usd' => 1400,
-    'gbp' => 1200,
-    'eur' => 1000,
-]);
+$collection = collect([1, 2, 3, 4]);
 
-$ratio = [
-    'usd' => 1,
-    'gbp' => 1.37,
-    'eur' => 1.22,
-];
-
-$collection->reduce(function ($carry, $value, $key) use ($ratio) {
-    return $carry + ($value * $ratio[$key]);
+$filtered = $collection->reject(function ($value, $key) {
+    return $value > 2;
 });
 
+$filtered->all();
 
-dd($collection);
+dd($filtered);
     }
 }
 
