@@ -12,9 +12,9 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['product_id' => 1, 'price' => 100]);
+$collection = collect(['Desk', 'Chair']);
 
-$merged = $collection->merge(['price' => 200, 'discount' => false]);
+$merged = $collection->merge(['Bookcase', 'Door']);
 
 $merged->all();
 
