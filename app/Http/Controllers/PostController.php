@@ -14,12 +14,10 @@ class PostController extends Controller
                 return Str::upper($value);
             });
         });
-        
-$collection = Collection::times(10, function ($number) {
-    return $number * 9;
-});
 
-$collection->all();
+$collection = collect(['name' => 'Desk', 'price' => 200]);
+
+$collection->toArray();
 
 dd($collection);
     }
