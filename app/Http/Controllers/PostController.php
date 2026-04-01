@@ -15,9 +15,11 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([2, 4, 6, 8]);
+$collection = collect([1, 2, 3, 4, 5]);
 
-$collection->search(4);
+$collection->shift();
+
+$collection->all();
 
 dd($collection);
     }
