@@ -12,13 +12,15 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$max = collect([
+$median = collect([
     ['foo' => 10],
-    ['foo' => 20]
-])->max('foo');
+    ['foo' => 10],
+    ['foo' => 20],
+    ['foo' => 40]
+])->median('foo');
 
-$max = collect([1, 2, 3, 4, 5])->max();
+$median = collect([1, 1, 2, 4])->median();
 
-dd($max)
+dd($median)
 
 ?>
