@@ -14,15 +14,14 @@ class PostController extends Controller
                 return Str::upper($value);
             });
         });
-$collection = collect([1, 2, 3, 4]);
-
-$subset = $collection->takeWhile(function ($item) {
-    return $item < 3;
+        
+$collection = Collection::times(10, function ($number) {
+    return $number * 9;
 });
 
-$subset->all();
+$collection->all();
 
-dd($subset);
+dd($collection);
     }
 }
 
