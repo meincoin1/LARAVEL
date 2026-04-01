@@ -15,17 +15,15 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([
-    'ID' => 22345,
-    'first' => 'John',
-    'last' => 'Doe',
-]);
+$collection = collect([1, 2, 3, 4, 5]);
 
-$sorted = $collection->sortKeysUsing('strnatcasecmp');
+$chunk = $collection->splice(2);
 
-$sorted->all();
+$chunk->all();
 
-dd($sorted);
+$collection->all();
+
+dd($collection);
     }
 }
 
