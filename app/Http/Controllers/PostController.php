@@ -15,13 +15,11 @@ class PostController extends Controller
             });
         });
 
-$collection = collect(['a', 'b', 'c', 'd', 'e']);
+$collection = collect([2, 4, 6, 8]);
 
-$reversed = $collection->reverse();
+$collection->search(4);
 
-$reversed->all();
-
-dd($reversed);
+dd($collection);
     }
 }
 
