@@ -15,13 +15,19 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 1, 2, 2, 3, 4, 2]);
+$collection = collect([1, 2, 3]);
 
-$unique = $collection->unique();
+$collection->unless(true, function ($collection) {
+    return $collection->push(4);
+});
 
-$unique->values()->all();
+$collection->unless(false, function ($collection) {
+    return $collection->push(5);
+});
 
-dd($unique);
+$collection->all();
+
+dd($collection);
     }
 }
 
