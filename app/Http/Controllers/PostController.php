@@ -17,11 +17,11 @@ class PostController extends Controller
 
 $collection = collect([1, 2, 3, 4, 5]);
 
-$collection->shift();
+$shuffled = $collection->shuffle();
 
-$collection->all();
+$shuffled->all();
 
-dd($collection);
+dd($shuffled);
     }
 }
 
