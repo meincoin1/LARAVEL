@@ -15,13 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1 => ['a'], 2 => ['b']]);
+$collection = collect([1, 1, 2, 2, 3, 4, 2]);
 
-$union = $collection->union([3 => ['c'], 1 => ['d']]);
+$unique = $collection->unique();
 
-$union->all();
+$unique->values()->all();
 
-dd($union);
+dd($unique);
     }
 }
 
