@@ -15,15 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3, 4]);
+$collection = collect(['Taylor', 'Abigail', 'James']);
 
-$filtered = $collection->reject(function ($value, $key) {
-    return $value > 2;
-});
+$replaced = $collection->replace([1 => 'Victoria', 3 => 'Finn']);
 
-$filtered->all();
+$replaced->all();
 
-dd($filtered);
+dd($replaced);
     }
 }
 
