@@ -15,9 +15,9 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3, 4, 5]);
+$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
-$groups = $collection->split(3);
+$groups = $collection->splitIn(3);
 
 $groups->all();
 
