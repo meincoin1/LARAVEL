@@ -14,14 +14,11 @@ class PostController extends Controller
                 return Str::upper($value);
             });
         });
+            $collection = collect()->range(3, 6);
 
-        $collection = collect([1, 2, 3, 4, 5]);
+            $collection->all();
 
-        $random = $collection->random(3);
-
-        $random->all();
-
-        dd($random);
+            dd($collection);
     }
 }
 
