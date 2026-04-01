@@ -15,15 +15,21 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3, 4, 5]);
+$person = collect([
+    'name.first_name' => 'Marie',
+    'name.last_name' => 'Valentine',
+    'address.line_1' => '2992 Eagle Drive',
+    'address.line_2' => '',
+    'address.suburb' => 'Detroit',
+    'address.state' => 'MI',
+    'address.postcode' => '48219'
+]);
 
-$collection->transform(function ($item, $key) {
-    return $item * 2;
-});
+$person = $person->undot();
 
-$collection->all();
+$person->toArray();
 
-dd($collection);
+dd($person);
     }
 }
 
