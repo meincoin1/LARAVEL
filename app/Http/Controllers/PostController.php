@@ -17,13 +17,11 @@ class PostController extends Controller
 
 $collection = collect([1, 2, 3, 4, 5]);
 
-$chunk = $collection->splice(2);
+$groups = $collection->split(3);
 
-$chunk->all();
+$groups->all();
 
-$collection->all();
-
-dd($collection);
+dd($groups);
     }
 }
 
