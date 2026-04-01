@@ -12,9 +12,9 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([1, 2, 3, 4, 5]);
+$collection = collect(['one' => 1, 'two' => 2]);
 
-$collection->prepend(0);
+$collection->prepend(0, 'zero');
 
 $collection->all();
 
