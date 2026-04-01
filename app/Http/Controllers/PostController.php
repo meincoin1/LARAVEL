@@ -15,9 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect(['name' => 'Desk', 'price' => 200]);
+$collection = collect([1, 2, 3, 4, 5]);
 
-$collection->toJson();
+$collection->transform(function ($item, $key) {
+    return $item * 2;
+});
+
+$collection->all();
 
 dd($collection);
     }
