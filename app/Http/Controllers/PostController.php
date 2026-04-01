@@ -12,16 +12,10 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['product_id' => 1, 'price' => 100]);
+$min = collect([['foo' => 10], ['foo' => 20]])->min('foo');
 
-$merged = $collection->mergeRecursive([
-    'product_id' => 2,
-    'price' => 200,
-    'discount' => false
-]);
+$min = collect([1, 2, 3, 4, 5])->min();
 
-$merged->all();
-
-dd($merged)
+dd($min)
 
 ?>
