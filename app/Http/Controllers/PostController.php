@@ -17,7 +17,7 @@ class PostController extends Controller
 
 $collection = collect(['name' => 'Desk', 'price' => 200]);
 
-$collection->toArray();
+$collection->toJson();
 
 dd($collection);
     }
