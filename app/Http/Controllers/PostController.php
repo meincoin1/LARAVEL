@@ -13,21 +13,13 @@ Collection::macro('toUpper', function () {
 });
 
 $collection = collect([
-    [
-        'name' => 'Laracon',
-        'speakers' => [
-            'first_day' => ['Rosa', 'Judith'],
-        ],
-    ],
-    [
-        'name' => 'VueConf',
-        'speakers' => [
-            'first_day' => ['Abigail', 'Joey'],
-        ],
-    ],
+    ['brand' => 'Tesla',  'color' => 'red'],
+    ['brand' => 'Pagani', 'color' => 'white'],
+    ['brand' => 'Tesla',  'color' => 'black'],
+    ['brand' => 'Pagani', 'color' => 'orange'],
 ]);
 
-$plucked = $collection->pluck('speakers.first_day');
+$plucked = $collection->pluck('color', 'brand');
 
 $plucked->all();
 
