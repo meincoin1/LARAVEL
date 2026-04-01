@@ -14,18 +14,10 @@ class PostController extends Controller
                 return Str::upper($value);
             });
         });
+        
+$collection = collect([5, 3, 1, 2, 4]);
 
-$collection = collect([
-    ['name' => 'Taylor Otwell', 'age' => 34],
-    ['name' => 'Abigail Otwell', 'age' => 30],
-    ['name' => 'Taylor Otwell', 'age' => 36],
-    ['name' => 'Abigail Otwell', 'age' => 32],
-]);
-
-$sorted = $collection->sortBy([
-    fn ($a, $b) => $a['name'] <=> $b['name'],
-    fn ($a, $b) => $b['age'] <=> $a['age'],
-]);
+$sorted = $collection->sortDesc();
 
 $sorted->values()->all();
 
