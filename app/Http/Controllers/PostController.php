@@ -15,15 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3, 4]);
+$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
-$subset = $collection->skipWhile(function ($item) {
-    return $item <= 3;
-});
+$slice = $collection->slice(4);
 
-$subset->all();
+$slice->all();
 
-dd($subset);
+dd($slice);
     }
 }
 
