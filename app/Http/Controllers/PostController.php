@@ -14,13 +14,25 @@ class PostController extends Controller
                 return Str::upper($value);
             });
         });
-            $collection = collect([1, 2, 3]);
 
-            $total = $collection->reduce(function ($carry, $item) {
-            return $carry + $item;
-            });
+$collection = collect([
+    'usd' => 1400,
+    'gbp' => 1200,
+    'eur' => 1000,
+]);
 
-            dd($total);
+$ratio = [
+    'usd' => 1,
+    'gbp' => 1.37,
+    'eur' => 1.22,
+];
+
+$collection->reduce(function ($carry, $value, $key) use ($ratio) {
+    return $carry + ($value * $ratio[$key]);
+});
+
+
+dd($collection);
     }
 }
 
