@@ -14,11 +14,13 @@ class PostController extends Controller
                 return Str::upper($value);
             });
         });
-            $collection = collect()->range(3, 6);
+            $collection = collect([1, 2, 3]);
 
-            $collection->all();
+            $total = $collection->reduce(function ($carry, $item) {
+            return $carry + $item;
+            });
 
-            dd($collection);
+            dd($total);
     }
 }
 
