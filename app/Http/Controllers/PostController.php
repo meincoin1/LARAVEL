@@ -15,24 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([
-    'Taylor',
-    'Abigail',
-    [
-        'James',
-        'Victoria',
-        'Finn'
-    ]
-]);
+$collection = collect(['a', 'b', 'c', 'd', 'e']);
 
-$replaced = $collection->replaceRecursive([
-    'Charlie',
-    2 => [1 => 'King']
-]);
+$reversed = $collection->reverse();
 
-$replaced->all();
+$reversed->all();
 
-dd($replaced);
+dd($reversed);
     }
 }
 
