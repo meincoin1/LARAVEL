@@ -15,9 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([5, 3, 1, 2, 4]);
+$collection = collect([
+    ['name' => 'Desk', 'price' => 200],
+    ['name' => 'Chair', 'price' => 100],
+    ['name' => 'Bookcase', 'price' => 150],
+]);
 
-$sorted = $collection->sort();
+$sorted = $collection->sortBy('price');
 
 $sorted->values()->all();
 
