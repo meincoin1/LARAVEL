@@ -14,27 +14,23 @@ Collection::macro('toUpper', function () {
 
 $collection = collect([
     [
-        'name' => 'John Doe',
+        'name' => 'John',
         'department' => 'Sales',
+        'email' => 'john@example.com',
     ],
     [
-        'name' => 'Jane Doe',
-        'department' => 'Sales',
-    ],
-    [
-        'name' => 'Johnny Doe',
+        'name' => 'Jane',
         'department' => 'Marketing',
+        'email' => 'jane@example.com',
     ]
 ]);
 
-$grouped = $collection->mapToGroups(function ($item, $key) {
-    return [$item['department'] => $item['name']];
+$keyed = $collection->mapWithKeys(function ($item, $key) {
+    return [$item['email'] => $item['name']];
 });
 
-$grouped->all();
+$keyed->all();
 
-$grouped->get('Sales')->all();
-
-dd($grouped)
+dd($keyed)
 
 ?>
