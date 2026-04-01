@@ -17,7 +17,7 @@ $collection = collect([
     ['product_id' => 'prod-200', 'name' => 'Chair'],
 ]);
 
-$plucked = $collection->pluck('name');
+$plucked = $collection->pluck('name', 'product_id');
 
 $plucked->all();
 
