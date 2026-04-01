@@ -14,12 +14,15 @@ Collection::macro('toUpper', function () {
 
 $collection = collect([1, 2, 3]);
 
-$collection = collect([1, 2, 3]);
+$result = $collection->pipeThrough([
+    function ($collection) {
+        return $collection->merge([4, 5]);
+    },
+    function ($collection) {
+        return $collection->sum();
+    },
+]);
 
-$piped = $collection->pipe(function ($collection) {
-    return $collection->sum();
-});
-
-dd($piped)
+dd($result)
 
 ?>
