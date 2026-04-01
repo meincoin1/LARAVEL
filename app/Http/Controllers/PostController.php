@@ -12,25 +12,13 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([
-    [
-        'name' => 'John',
-        'department' => 'Sales',
-        'email' => 'john@example.com',
-    ],
-    [
-        'name' => 'Jane',
-        'department' => 'Marketing',
-        'email' => 'jane@example.com',
-    ]
-]);
+$max = collect([
+    ['foo' => 10],
+    ['foo' => 20]
+])->max('foo');
 
-$keyed = $collection->mapWithKeys(function ($item, $key) {
-    return [$item['email'] => $item['name']];
-});
+$max = collect([1, 2, 3, 4, 5])->max();
 
-$keyed->all();
-
-dd($keyed)
+dd($max)
 
 ?>
