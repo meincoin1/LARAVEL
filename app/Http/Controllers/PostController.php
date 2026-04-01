@@ -12,9 +12,9 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect(['product_id' => 'prod-100', 'name' => 'Desk']);
+$collection = collect([1, 2, 3, 4]);
 
-$collection->pull('name');
+$collection->push(5);
 
 $collection->all();
 
