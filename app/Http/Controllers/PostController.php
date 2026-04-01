@@ -12,17 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([
-    ['brand' => 'Tesla',  'color' => 'red'],
-    ['brand' => 'Pagani', 'color' => 'white'],
-    ['brand' => 'Tesla',  'color' => 'black'],
-    ['brand' => 'Pagani', 'color' => 'orange'],
-]);
+$collection = collect([1, 2, 3, 4, 5]);
 
-$plucked = $collection->pluck('color', 'brand');
+$collection->pop(3);
 
-$plucked->all();
+$collection->all();
 
-dd($plucked)
+dd($collection)
 
 ?>
