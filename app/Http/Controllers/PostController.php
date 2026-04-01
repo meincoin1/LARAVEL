@@ -12,14 +12,13 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([
-    'product_id' => 1,
-    'name' => 'Desk',
-    'price' => 100,
-    'discount' => false
-]);
+$collection = collect(['A', 'B', 'C']);
 
-$filtered = $collection->only(['product_id', 'name']);
+$filtered = $collection->pad(5, 0);
+
+$filtered->all();
+
+$filtered = $collection->pad(-5, 0);
 
 $filtered->all();
 
