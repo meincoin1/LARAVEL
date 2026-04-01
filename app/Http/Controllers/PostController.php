@@ -15,13 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3, 4, 5]);
+$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
-$shuffled = $collection->shuffle();
+$collection = $collection->skip(4);
 
-$shuffled->all();
+$collection->all();
 
-dd($shuffled);
+dd($collection);
     }
 }
 
