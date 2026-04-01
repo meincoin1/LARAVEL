@@ -12,16 +12,29 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$collection = collect([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+$collection = collect([
+    [
+        'name' => 'John Doe',
+        'department' => 'Sales',
+    ],
+    [
+        'name' => 'Jane Doe',
+        'department' => 'Sales',
+    ],
+    [
+        'name' => 'Johnny Doe',
+        'department' => 'Marketing',
+    ]
+]);
 
-$chunks = $collection->chunk(2);
-
-$sequence = $chunks->mapSpread(function ($even, $odd) {
-    return $even + $odd;
+$grouped = $collection->mapToGroups(function ($item, $key) {
+    return [$item['department'] => $item['name']];
 });
 
-$sequence->all();
+$grouped->all();
 
-dd($sequence)
+$grouped->get('Sales')->all();
+
+dd($grouped)
 
 ?>
