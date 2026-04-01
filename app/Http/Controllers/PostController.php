@@ -16,14 +16,16 @@ class PostController extends Controller
         });
 
 $collection = collect([
-    ['name' => 'Desk', 'colors' => ['Black', 'Mahogany']],
-    ['name' => 'Chair', 'colors' => ['Black']],
-    ['name' => 'Bookcase', 'colors' => ['Red', 'Beige', 'Brown']],
+    ['name' => 'Taylor Otwell', 'age' => 34],
+    ['name' => 'Abigail Otwell', 'age' => 30],
+    ['name' => 'Taylor Otwell', 'age' => 36],
+    ['name' => 'Abigail Otwell', 'age' => 32],
 ]);
 
-$sorted = $collection->sortBy(function ($product, $key) {
-    return count($product['colors']);
-});
+$sorted = $collection->sortBy([
+    ['name', 'asc'],
+    ['age', 'desc'],
+]);
 
 $sorted->values()->all();
 
