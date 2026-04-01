@@ -15,13 +15,15 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3, 4, 5]);
+$collection = collect([
+    ['product' => 'Desk', 'price' => 200],
+    ['product' => 'Chair', 'price' => 100],
+]);
 
-$chunks = $collection->sliding(2);
+$collection->sole('product', 'Chair');
 
-$chunks->toArray();
 
-dd($chunks);
+dd($collection);
     }
 }
 
