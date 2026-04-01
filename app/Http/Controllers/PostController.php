@@ -14,7 +14,7 @@ Collection::macro('toUpper', function () {
 
 $collection = collect([1, 2, 3, 4, 5]);
 
-$collection->pop(3);
+$collection->prepend(0);
 
 $collection->all();
 
