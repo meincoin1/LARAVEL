@@ -14,12 +14,16 @@ class PostController extends Controller
                 return Str::upper($value);
             });
         });
-        
-$collection = collect([5, 3, 1, 2, 4]);
 
-$sorted = $collection->sortDesc();
+$collection = collect([
+    'id' => 22345,
+    'first' => 'John',
+    'last' => 'Doe',
+]);
 
-$sorted->values()->all();
+$sorted = $collection->sortKeys();
+
+$sorted->all();
 
 dd($sorted);
     }
