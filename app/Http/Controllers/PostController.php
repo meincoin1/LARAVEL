@@ -12,15 +12,12 @@ Collection::macro('toUpper', function () {
     });
 });
 
-$median = collect([
-    ['foo' => 10],
-    ['foo' => 10],
-    ['foo' => 20],
-    ['foo' => 40]
-])->median('foo');
+$collection = collect(['product_id' => 1, 'price' => 100]);
 
-$median = collect([1, 1, 2, 4])->median();
+$merged = $collection->merge(['price' => 200, 'discount' => false]);
 
-dd($median)
+$merged->all();
+
+dd($merged)
 
 ?>
