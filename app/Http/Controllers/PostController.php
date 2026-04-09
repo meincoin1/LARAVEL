@@ -21,7 +21,7 @@ $collection = collect([
     ['name' => 'Bookcase'],
 ]);
 
-$filtered = $collection->whereNotNull('name');
+$filtered = $collection->whereNull('name');
 
 $filtered->all();
 
