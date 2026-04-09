@@ -15,14 +15,18 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3]);
+$collection = collect(['Michael', 'Tom']);
 
-$collection->when(true, function ($collection, $value) {
-    return $collection->push(4);
+$collection->whenEmpty(function ($collection) {
+    return $collection->push('Adam');
 });
 
-$collection->when(false, function ($collection, $value) {
-    return $collection->push(5);
+$collection->all();
+
+$collection = collect();
+
+$collection->whenEmpty(function ($collection) {
+    return $collection->push('Adam');
 });
 
 $collection->all();
