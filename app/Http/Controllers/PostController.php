@@ -15,17 +15,12 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([1, 2, 3]);
+$collection = collect([
+    ['product' => 'Desk', 'price' => 200],
+    ['product' => 'Speaker', 'price' => 400],
+]);
 
-$collection->unless(true, function ($collection) {
-    return $collection->push(4);
-});
-
-$collection->unless(false, function ($collection) {
-    return $collection->push(5);
-});
-
-$collection->all();
+$value = $collection->value('price');
 
 dd($collection);
     }
