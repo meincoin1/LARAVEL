@@ -16,13 +16,12 @@ class PostController extends Controller
         });
 
 $collection = collect([
-    ['product' => 'Desk', 'price' => 200],
-    ['product' => 'Chair', 'price' => 100],
-    ['product' => 'Bookcase', 'price' => 150],
-    ['product' => 'Door', 'price' => 100],
+    ['name' => 'Desk'],
+    ['name' => null],
+    ['name' => 'Bookcase'],
 ]);
 
-$filtered = $collection->whereNotIn('price', [150, 200]);
+$filtered = $collection->whereNotNull('name');
 
 $filtered->all();
 
