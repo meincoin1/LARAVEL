@@ -15,18 +15,10 @@ class PostController extends Controller
             });
         });
 
-$collection = collect(['Michael', 'Tom']);
+$collection = collect(['michael', 'tom']);
 
-$collection->whenEmpty(function ($collection) {
-    return $collection->push('Adam');
-});
-
-$collection->all();
-
-$collection = collect();
-
-$collection->whenEmpty(function ($collection) {
-    return $collection->push('Adam');
+$collection->whenNotEmpty(function ($collection) {
+    return $collection->push('adam');
 });
 
 $collection->all();
