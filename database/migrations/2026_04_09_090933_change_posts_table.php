@@ -10,7 +10,7 @@ class ChangePostsTable extends Migration
     public function up()
 	{
 		Schema::table('startonemigrate', function (Blueprint $table) {
-			$table->string('title');
+			$table->string('title', 100)->change();
 			$table->text('desc');
 		});
 	}
