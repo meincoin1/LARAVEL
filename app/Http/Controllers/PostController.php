@@ -16,11 +16,13 @@ class PostController extends Controller
         });
 
 $collection = collect([
-    ['product' => 'Desk', 'price' => 200],
-    ['product' => 'Speaker', 'price' => 400],
+    10 => ['product' => 'Desk', 'price' => 200],
+    11 => ['product' => 'Desk', 'price' => 200],
 ]);
 
-$value = $collection->value('price');
+$values = $collection->values();
+
+$values->all();
 
 dd($collection);
     }
