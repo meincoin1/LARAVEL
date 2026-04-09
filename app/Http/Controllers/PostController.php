@@ -17,12 +17,13 @@ class PostController extends Controller
 
 $collection = collect([
     ['product' => 'Desk', 'price' => 200],
-    ['product' => 'Chair', 'price' => 100],
+    ['product' => 'Chair', 'price' => 80],
     ['product' => 'Bookcase', 'price' => 150],
+    ['product' => 'Pencil', 'price' => 30],
     ['product' => 'Door', 'price' => 100],
 ]);
 
-$filtered = $collection->whereIn('price', [150, 200]);
+$filtered = $collection->whereNotBetween('price', [100, 200]);
 
 $filtered->all();
 
