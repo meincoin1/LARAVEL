@@ -15,15 +15,18 @@ class PostController extends Controller
             });
         });
 
-$collection = collect(['michael', 'tom']);
+$collection = collect([
+    ['product' => 'Desk', 'price' => 200],
+    ['product' => 'Chair', 'price' => 100],
+    ['product' => 'Bookcase', 'price' => 150],
+    ['product' => 'Door', 'price' => 100],
+]);
 
-$collection->whenNotEmpty(function ($collection) {
-    return $collection->push('adam');
-});
+$filtered = $collection->where('price', 100);
 
-$collection->all();
+$filtered->all();
 
-dd($collection);
+dd($filtered);
     }
 }
 
