@@ -15,17 +15,13 @@ class PostController extends Controller
             });
         });
 
-$collection = collect([
-    ['name' => 'Desk'],
-    ['name' => null],
-    ['name' => 'Bookcase'],
-]);
+$collection = collect(['Chair', 'Desk']);
 
-$filtered = $collection->whereNull('name');
+$zipped = $collection->zip([100, 200]);
 
-$filtered->all();
+$zipped->all();
 
-dd($filtered);
+dd($zipped);
     }
 }
 
