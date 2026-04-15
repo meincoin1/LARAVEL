@@ -10,7 +10,7 @@ class ChangePostsTable extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-           $table->integer('votes')->unsigned();
+           $table->string('name')->first()->change();
         });
     }
 }
