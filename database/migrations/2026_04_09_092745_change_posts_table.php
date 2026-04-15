@@ -10,8 +10,8 @@ class ChangePostsTable extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('text')->nullable();
-	});
+            $table->string('desc')->comment('my comment');
+        });
     }
-
-};
+}
+;
