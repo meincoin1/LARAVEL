@@ -4,21 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email')->unique()->after('id');
-            $table->string('phone')->nullable()->after('email');
-            $table->string('address')->nullable()->after('phone');
+            $table->string('email')->comment('User email address')->change();
         });
     }
 
     public function down(): void
     {
+        // Убираем комментарий при откате
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['email', 'phone', 'address']);
+            $table->string('email')->comment('')->change();
         });
     }
 };
