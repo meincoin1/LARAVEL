@@ -6,11 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class ChangePostsTable extends Migration
 {
-
     public function up(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
-           Schema::rename('posts', 'articles');
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id(); // первичный ключ
+            $table->string('title');
+            $table->text('content');
+            $table->timestamps(); //
         });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('posts');
     }
 }
