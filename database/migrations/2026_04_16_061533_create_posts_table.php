@@ -10,10 +10,10 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');           // заголовок статьи
-            $table->text('content');            // текст статьи
-            $table->timestamp('published_at')->nullable(); // дата публикации
-            $table->timestamps();               // created_at, updated_at
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->text('text');
+            $table->timestamps();
         });
     }
 
