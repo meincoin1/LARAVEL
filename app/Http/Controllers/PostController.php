@@ -12,9 +12,6 @@ class PostController extends Controller
     public function show()
     {
         $posts = DB::table('posts')->get();
-
-        foreach ($posts as $post) {
-            dump($post);
-        }
+        return view('post.show', ['posts' => $posts]);
     }
 }
