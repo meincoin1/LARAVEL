@@ -14,4 +14,4 @@ class PostController extends Controller
         $posts = DB::table('posts')->get();
         dump($posts);
     }
-}
+}gnbtfgngn
