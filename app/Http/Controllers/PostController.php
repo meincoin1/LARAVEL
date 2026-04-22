@@ -8,9 +8,10 @@ class PostController extends Controller
 	public function show()
 	{
 		$posts = DB::table('posts')
-		->oldest()
+		->inRandomOrder()
 		->get();
 	
 	dump($posts);
+
 	}
 }
