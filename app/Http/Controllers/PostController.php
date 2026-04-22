@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-	public function run()
+	public function show()
 	{
-		DB::table('posts')->where('likes', '>', 46)->dd();
+		$posts = DB::table('posts')->where('likes', 150)->get();
+		// return view('post.show', ['posts' => $posts]);
+		dd($posts);
 	}
 }
