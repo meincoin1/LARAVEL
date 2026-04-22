@@ -7,11 +7,11 @@ class PostController extends Controller
 {
 	public function show()
 	{
-		$titles = DB::table('posts')->pluck('title');
+		$titles = DB::table('posts')
+			->where('id', '>', '3')
+			->pluck('title');
 
-		foreach ($titles as $title) {
-			echo $title;
-		}
+		dump($titles);
 
 	}
 }
