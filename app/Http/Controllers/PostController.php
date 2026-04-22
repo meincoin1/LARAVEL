@@ -7,8 +7,10 @@ class PostController extends Controller
 {
     public function show()
     {
-        DB::table('posts')
-		->where('id', 1)
-		->delete();
+        $posts = DB::table('posts')
+            ->leftJoin('categories', 'categories.id', '=', 'posts.category_id')
+            ->get();
+        
+        dump($posts);
     }
 }
