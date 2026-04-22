@@ -7,11 +7,11 @@ class PostController extends Controller
 {
 	public function show()
 	{
-		$posts = DB::table('posts')
+		$post = DB::table('posts')
 		->inRandomOrder()
-		->get();
-	
-	dump($posts);
+		->first();
+		
+	dump($post);
 
 	}
 }
