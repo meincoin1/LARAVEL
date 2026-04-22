@@ -8,11 +8,9 @@ class PostController extends Controller
 	public function show()
 	{
 		$posts = DB::table('posts')
-		->latest()
+		->oldest()
 		->get();
 	
 	dump($posts);
-
-
 	}
 }
