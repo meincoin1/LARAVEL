@@ -8,9 +8,10 @@ class PostController extends Controller
 	public function show()
 	{
 		$posts = DB::table('posts')
-			->whereBetween('likes', [1, 100])
+			->whereNotBetween('likes', [1, 100])
 			->get();
 
 		dump($posts);
+
 	}
 }
