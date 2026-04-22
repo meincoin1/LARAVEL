@@ -7,12 +7,10 @@ class PostController extends Controller
 {
 	public function show()
 	{
-		$posts = DB::table('posts')
-		->skip(3)
-		->take(5)
-		->get();
-	
-	dump($posts);
-
+			$id = DB::table('posts')->insertGetId([
+		'title' => 'page',
+		'slug'  => 'slug',
+	]);
+	echo $id;
 	}
 }
