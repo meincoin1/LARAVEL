@@ -20,3 +20,5 @@ class UserController extends Controller
         // dump(DB::getQueryLog());
     }
 }
+
+
