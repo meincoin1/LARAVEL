@@ -2,49 +2,60 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\DB; 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class PostsTableSeeder extends Seeder
 {
-    public function run()
-    {
-        DB::table('posts')->insert([
-            [
-                'title' => 'First Post',
-                'slug' => 'first-post',
-                'likes' => 150,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Second Post',
-                'slug' => 'second-post',
-                'likes' => 230,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Third Post',
-                'slug' => 'third-post',
-                'likes' => 89,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Laravel Tutorial',
-                'slug' => 'laravel-tutorial',
-                'likes' => 450,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'PHP Tips',
-                'slug' => 'php-tips',
-                'likes' => 320,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
-    }
+   public function run()
+{
+    DB::table('posts')->insert([
+        [
+            'title' => 'Первая новость',
+            'slug' => 'pervaya-novost',
+            'text' => 'Текст первой новости',
+            'likes' => 150,
+            'category_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'title' => 'Интересная статья',
+            'slug' => 'interesnaya-statya',
+            'text' => 'Текст интересной статьи',
+            'likes' => 85,
+            'category_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'title' => 'Обзор iPhone',
+            'slug' => 'obzor-iphone',
+            'text' => 'Текст обзора iPhone',
+            'likes' => 230,
+            'category_id' => 3,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'title' => 'Вторая новость',
+            'slug' => 'vtoraya-novost',
+            'text' => 'Текст второй новости',
+            'likes' => 45,
+            'category_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'title' => 'Техническая статья',
+            'slug' => 'tehnicheskaya-statya',
+            'text' => 'Текст технической статьи',
+            'likes' => 67,
+            'category_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+    ]);
+}
 }

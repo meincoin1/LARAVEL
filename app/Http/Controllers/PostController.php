@@ -1,18 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    public function show()
-    {
-        $posts = DB::table('posts')->get();
-        dd($posts->first());
-        return view('post.show', ['posts' => $posts]);
-    }
+	public function run()
+	{
+		DB::table('posts')->where('likes', '>', 46)->dd();
+	}
 }
