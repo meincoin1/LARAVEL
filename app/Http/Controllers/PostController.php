@@ -12,6 +12,7 @@ class PostController extends Controller
     public function show()
     {
         $posts = DB::table('posts')->get();
+        dd($posts->first());
         return view('post.show', ['posts' => $posts]);
     }
 }

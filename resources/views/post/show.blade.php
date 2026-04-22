@@ -4,8 +4,13 @@
     <title>title</title>
 </head>
 <body>
-    @for($i = 1; $i <= 10; $i++)
-        <p>{{ $i }}</p>
-    @endfor
+	@foreach ($posts as $post)
+		<div>
+			<h2>{{ $post->title }}</h2>
+			<div>
+				{{ $post->text }}
+			</div>
+		</div>
+	@endforeach
 </body>
 </html>
