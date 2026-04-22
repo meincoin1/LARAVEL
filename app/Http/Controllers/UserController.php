@@ -7,8 +7,7 @@ class UserController extends Controller
 {
     public function show()
     {
-         $users = DB::table('users')->get();
-            foreach ($users as $user) {
-            dump($user);
+        $users = DB::table('users')->get();
+        return view('users.table', ['users' => $users]);
     }
 }
