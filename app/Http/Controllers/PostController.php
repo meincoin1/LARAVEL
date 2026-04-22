@@ -7,9 +7,7 @@ class PostController extends Controller
 {
 	public function show()
 	{
-		$title = DB::table('posts')->where('id', '1')->value('title');
-		echo $title;
-
-		// dd($post);
+		$titles = DB::table('posts')->pluck('title');
+		dump($titles);
 	}
 }
