@@ -8,9 +8,10 @@ class PostController extends Controller
 	public function show()
 	{
 		$posts = DB::table('posts')
-		->orderBy('likes')
+		->orderBy('likes', 'desc')
 		->get();
 	
 	dump($posts);
+
 	}
 }
