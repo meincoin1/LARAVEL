@@ -8,6 +8,10 @@ class PostController extends Controller
 	public function show()
 	{
 		$titles = DB::table('posts')->pluck('title');
-		dump($titles);
+
+		foreach ($titles as $title) {
+			echo $title;
+		}
+
 	}
 }
