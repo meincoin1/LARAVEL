@@ -8,6 +8,7 @@ class UserController extends Controller
     public function show()
     {
          $users = DB::table('users')->get();
-         dump($users);
+            foreach ($users as $user) {
+            dump($user);
     }
 }
