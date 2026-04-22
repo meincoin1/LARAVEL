@@ -8,9 +8,10 @@ class PostController extends Controller
 	public function show()
 	{
 		$posts = DB::table('posts')
-			->whereNotIn('id', [1, 2, 3])
+			->whereNull('updated_at')
 			->get();
 
 		dump($posts);
+
 	}
 }
