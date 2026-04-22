@@ -8,7 +8,7 @@ class PostController extends Controller
 	public function show()
 	{
 		$post = DB::table('posts')
-		->whereId(1)
+		->whereSlug('my-page')
 		->get();
 	
 	dump($post);
