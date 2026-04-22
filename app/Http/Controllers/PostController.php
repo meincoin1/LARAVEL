@@ -9,6 +9,6 @@ class PostController extends Controller
     {
         DB::table('posts')
 		->where('id', 1)
-		->increment('likes');
+		->delete();
     }
 }
