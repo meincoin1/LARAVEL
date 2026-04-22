@@ -7,10 +7,16 @@ class PostController extends Controller
 {
 	public function show()
 	{
-			$id = DB::table('posts')->insertGetId([
-		'title' => 'page',
-		'slug'  => 'slug',
+		DB::table('posts')->insert([
+		[
+			'title' => 'page1',
+			'slug'  => 'slug1',
+		],
+		[
+			'title' => 'page2',
+			'slug'  => 'slug2',
+		]
 	]);
-	echo $id;
+
 	}
 }
