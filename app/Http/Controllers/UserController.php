@@ -7,7 +7,7 @@ class UserController extends Controller
 {
     public function show()
     {
-        $user = DB::table('users')->whereIdAndAge(3, 20)->first();
+        $user = DB::table('users')->whereIdOrAge(3, 20)->get();
         dump($user);
     }
 }
