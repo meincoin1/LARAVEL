@@ -14,4 +14,5 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/post', [UserController::class, 'show']);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{id}', [PostController::class, 'show']);
