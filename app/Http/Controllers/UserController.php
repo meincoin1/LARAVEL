@@ -7,8 +7,8 @@ class UserController extends Controller
 {
     public function show()
     {
-        DB::table('users')->where('id', 1)->increment('age');
-        echo "Возраст увеличен";
+        DB::table('users')->where('age', 30)->increment('salary', 100);
+        echo "Зарплата увеличена на 100";
     }
 }
 
