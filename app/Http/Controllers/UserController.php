@@ -7,8 +7,8 @@ class UserController extends Controller
 {
     public function show()
     {
-        DB::table('users')->where('id', 5)->delete();
-        echo "Юзер с ID=5 удален";
+        DB::table('users')->delete();
+        echo "Все юзеры удалены";
     }
 }
 
