@@ -8,7 +8,7 @@ class UserController extends Controller
     public function show()
     {
         $names = DB::table('users')->pluck('name');
-        dump($names);
+        return view('user.names', ['names' => $names]);
     }
 }
 
