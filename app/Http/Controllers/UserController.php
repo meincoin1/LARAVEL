@@ -7,12 +7,8 @@ class UserController extends Controller
 {
     public function show()
     {
-        DB::table('users')->where('id', 5)->update([
-            'name' => 'Измененный юзер',
-            'salary' => 2000,
-            'updated_at' => now(),
-        ]);
-        echo "Юзер с ID=5 обновлен";
+        DB::table('users')->where('age', 30)->update(['salary' => 500]);
+        echo "Зарплата обновлена для юзеров с возрастом 30";
     }
 }
 
