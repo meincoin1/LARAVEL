@@ -8,7 +8,7 @@ class UserController extends Controller
     public function show()
     {
         $email = DB::table('users')->where('id', 3)->value('email');
-        echo $email;
+        return view('user.email', ['email' => $email]);
     }
 }
 
