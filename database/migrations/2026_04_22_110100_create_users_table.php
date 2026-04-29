@@ -1,21 +1,161 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
+    public function up()
+    {
+        DB::table('cities')->insert([
+            ['name' => 'Москва', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Санкт-Петербург', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Новосибирск', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Екатеринбург', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Казань', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Нижний Новгород', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Челябинск', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Омск', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Самара', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Ростов-на-Дону', 'created_at' => now(), 'updated_at' => now()],
+        ]);
 
-public function up()
-{
-    Schema::create('users', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->string('email');
-        $table->integer('age');
-        $table->integer('salary')->default(0);
-        $table->timestamps();
-    });
-}
+        DB::table('users')->insert([
+            [
+                'name' => 'Иван Петров',
+                'email' => 'ivan@mail.com',
+                'age' => 25,
+                'salary' => 500,
+                'city_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Мария Иванова',
+                'email' => 'maria@mail.com',
+                'age' => 30,
+                'salary' => 800,
+                'city_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Алексей Сидоров',
+                'email' => 'alexey@mail.com',
+                'age' => 22,
+                'salary' => 400,
+                'city_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Елена Смирнова',
+                'email' => 'elena@mail.com',
+                'age' => 35,
+                'salary' => 1200,
+                'city_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Дмитрий Козлов',
+                'email' => 'dmitry@mail.com',
+                'age' => 28,
+                'salary' => 600,
+                'city_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Ольга Новикова',
+                'email' => 'olga@mail.com',
+                'age' => 30,
+                'salary' => 500,
+                'city_id' => 5,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Павел Морозов',
+                'email' => 'pavel@mail.com',
+                'age' => 40,
+                'salary' => 1500,
+                'city_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Анна Воробьева',
+                'email' => 'anna@mail.com',
+                'age' => 26,
+                'salary' => 450,
+                'city_id' => 6,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Сергей Лебедев',
+                'email' => 'sergey@mail.com',
+                'age' => 33,
+                'salary' => 900,
+                'city_id' => 7,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Татьяна Соколова',
+                'email' => 'tatyana@mail.com',
+                'age' => 29,
+                'salary' => 550,
+                'city_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'john',
+                'email' => 'john@mail.com',
+                'age' => 30,
+                'salary' => 500,
+                'city_id' => 8,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Jane Smith',
+                'email' => 'jane@mail.com',
+                'age' => 27,
+                'salary' => 700,
+                'city_id' => 9,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Bob Johnson',
+                'email' => 'bob@mail.com',
+                'age' => 32,
+                'salary' => 850,
+                'city_id' => 10,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Alice Brown',
+                'email' => 'alice@mail.com',
+                'age' => 24,
+                'salary' => 380,
+                'city_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Tom Wilson',
+                'email' => 'tom@mail.com',
+                'age' => 38,
+                'salary' => 1100,
+                'city_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+    }
 };
