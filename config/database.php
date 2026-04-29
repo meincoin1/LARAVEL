@@ -2,6 +2,8 @@
 
 use Illuminate\Database\DBAL\TimestampType;
 use Illuminate\Support\Str;
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database.sqlite
 
 return [
 
@@ -18,6 +20,15 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'sqlite'),
+    'sqlsrv' => [
+    'driver' => 'sqlsrv',
+    'host' => env('DB_HOST', 'localhost'),
+    'database' => env('DB_DATABASE', 'forge'),
+    'username' => env('DB_USERNAME', 'forge'),
+    'password' => env('DB_PASSWORD', ''),
+     'charset' => 'utf8',
+    'prefix' => '',
+    ],
 
     /*
     |--------------------------------------------------------------------------

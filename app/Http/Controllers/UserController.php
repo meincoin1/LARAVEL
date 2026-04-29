@@ -1,21 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    public function show()
-    {
-        $users = DB::table('users')
-            ->leftJoin('cities', 'users.city_id', '=', 'cities.id')
-            ->select('users.*', 'cities.name as city_name')
-            ->get();
-        dump($users);
-    }
+  /**
+   * Показать список всех пользователей приложения.
+   *
+   * @return Response
+   */
+  public function index()
+  {
+    $users = DB::select('select * from users where active = ?', [1]);
+
+    return view('user.index', ['users' => $users]);
+  }
 }
-
-
-
-
-проверкаscaca
