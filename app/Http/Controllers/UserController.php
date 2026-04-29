@@ -7,8 +7,8 @@ class UserController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->inRandomOrder()->get();
-        dump($users);
+        $user = DB::table('users')->inRandomOrder()->first();
+        dump($user);
     }
 }
 
