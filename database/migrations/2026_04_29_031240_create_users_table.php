@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();                    
+            $table->string('name');         
+            $table->string('email');         
+            $table->integer('age');         
+            $table->integer('salary')->default(0); 
+            $table->foreignId('city_id')     
+                  ->nullable()              
+                  ->constrained('cities')   
+                  ->onDelete('set null');    
+            $table->timestamps();           
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('users');
+    }
+};

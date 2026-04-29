@@ -7,8 +7,11 @@ class UserController extends Controller
 {
     public function show()
     {
-        DB::table('users')->delete();
-        echo "Все юзеры удалены";
+        $users = DB::table('users')
+            ->leftJoin('cities', 'users.city_id', '=', 'cities.id')
+            ->select('users.*', 'cities.name as city_name')
+            ->get();
+        dump($users);
     }
 }
 
