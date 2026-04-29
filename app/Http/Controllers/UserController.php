@@ -7,11 +7,8 @@ class UserController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->whereBetween('age', [20, 30])->inRandomOrder()->get();
+        $users = DB::table('users')->take(3)->get();
         dump($users);
-        
-        $user = DB::table('users')->whereBetween('age', [20, 30])->inRandomOrder()->first();
-        dump($user);
     }
 }
 
