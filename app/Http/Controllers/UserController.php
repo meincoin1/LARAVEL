@@ -7,15 +7,12 @@ class UserController extends Controller
 {
     public function show()
     {
-        $id = DB::table('users')->insertGetId([
-            'name' => 'Юзер с ID',
-            'email' => 'id@mail.com',
-            'age' => 28,
-            'salary' => 1200,
-            'created_at' => now(),
-            'updated_at' => now(),
+        DB::table('users')->insert([
+            ['name' => 'Юзер 1', 'email' => 'user1@mail.com', 'age' => 20, 'salary' => 500],
+            ['name' => 'Юзер 2', 'email' => 'user2@mail.com', 'age' => 25, 'salary' => 600],
+            ['name' => 'Юзер 3', 'email' => 'user3@mail.com', 'age' => 30, 'salary' => 700],
         ]);
-        echo "ID нового юзера: " . $id;
+        echo "Добавлено 3 юзера";
     }
 }
 
