@@ -7,7 +7,7 @@ class UserController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->where('salary', 500)->orWhereBetween('age', [20, 30])->get();
+        $users = DB::table('users')->whereBetween('age', [20, 30])->orWhereBetween('salary', [400, 800])->get();
         dump($users);
     }
 }
