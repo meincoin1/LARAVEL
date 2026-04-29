@@ -7,8 +7,8 @@ class UserController extends Controller
 {
     public function show()
     {
-        $names = DB::table('users')->pluck('name');
-        return view('user.names', ['names' => $names]);
+        $users = DB::table('users')->whereBetween('age', [30, 40])->get();
+        dump($users);
     }
 }
 
