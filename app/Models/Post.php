@@ -30,4 +30,4 @@ class Post extends Model
         'date' => 'date',
         'id' => 'integer',
     ];
-}
+}проверка
