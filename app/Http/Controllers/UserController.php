@@ -7,7 +7,7 @@ class UserController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->orderBy('age', 'asc')->get();
+        $users = DB::table('users')->orderBy('salary', 'desc')->get();
         dump($users);
     }
 }
