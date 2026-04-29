@@ -7,7 +7,7 @@ class UserController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->where('age', 30)->take(3)->get();
+        $users = DB::table('users')->skip(4)->take(10)->get();
         dump($users);
     }
 }
