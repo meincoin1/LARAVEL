@@ -61,7 +61,7 @@
         <a href="/post/all/id/desc">По ID (убыв)</a>
         <a href="/post/all/title/desc">По заголовку (убыв)</a>
         <a href="/post/all/date/desc">По дате (убыв)</a>
-        |
+        |dcsdcsdcs
         <strong>Направление:</strong>
         <a href="/post/all/{{ $order }}/asc">По возрастанию ↑</a>
         <a href="/post/all/{{ $order }}/desc">По убыванию ↓</a>
