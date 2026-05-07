@@ -14,6 +14,4 @@ class Post extends Model
         'text',
         'date'
     ];
-    
-    public $timestamps = false;
 }
