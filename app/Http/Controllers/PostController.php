@@ -14,10 +14,9 @@ class PostController extends Controller
         $post->title = 'Новый заголовок записи с id 1';
         $post->desc = 'Новое описание записи с id 1';
         $post->save();
-
     }
     
-    // // 26.1: Создание новой статьи
+    // 26.1: Создание новой статьи
     public function newPost(Request $request)
     {
         if ($request->has('submit')) {
@@ -39,5 +38,21 @@ class PostController extends Controller
     {
         $posts = Post::all();
         return view('posts.all', ['posts' => $posts]);
+    }
+
+    // 26.3: Редактирование статьи
+    public function editPost(Request $request, $id)
+    {
+        $post = Post::find($id);
+        
+        if ($request->has('submit')) {
+            $post->title = $request->title;
+            $post->desc = $request->desc;
+            $post->date = $request->date;
+            $post->text = $request->text;
+            $post->save();
+        }
+        
+        return view('editPost', ['post' => $post]);
     }
 }
