@@ -1,96 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Все статьи</title>
+    <title>Список статей</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-        th, td {
+        .post {
             border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
         }
-        th {
+        .btn-add {
+            display: inline-block;
             background-color: #4CAF50;
             color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        a {
-            color: #4CAF50;
+            padding: 10px 15px;
             text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .sort-links {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .sort-links a {
-            margin: 0 10px;
-            padding: 5px 10px;
-            background: #4CAF50;
-            color: white;
             border-radius: 3px;
+            margin-bottom: 20px;
+        }
+        .btn-change {
             display: inline-block;
-        }
-        .sort-links a:hover {
-            background: #45a049;
-        }
-        .current-sort {
-            margin: 10px 0;
-            text-align: center;
-            color: #666;
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <h1>Список статей</h1>
     
-    {{-- Задача 25.8 и 25.9: Ссылки для сортировки --}}
-    <div class="sort-links"
-        <strong>Сортировка по полю:</strong>
-        <a href="/post/all/id/desc">По ID (убыв)</a>
-        <a href="/post/all/title/desc">По заголовку (убыв)</a>
-        <a href="/post/all/date/desc">По дате (убыв)</a>
-        |dcsdcsdcs
-        <strong>Направление:</strong>
-        <a href="/post/all/{{ $order }}/asc">По возрастанию ↑</a>
-        <a href="/post/all/{{ $order }}/desc">По убыванию ↓</a>
-    </div>
+    <a href="/post/new" class="btn-add">+ Добавить новую статью</a>
+    <a href="/post/change-first" class="btn-change">Изменить статью с id=1</a>
     
-    <div class="current-sort">
-        Текущая сортировка: по полю <strong>{{ $order }}</strong> 
-        в направлении <strong>{{ $dir === 'asc' ? 'возрастания ↑' : 'убывания ↓' }}</strong>
-    </div>
-    
-    {{-- Задача 25.3: HTML таблица со статьями --}}
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Заголовок</th>
-                <th>Описание</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($posts as $post)
-            <tr>
-                <td>{{ $post->id }}</td>
-                {{-- Задача 25.6: Заголовок как ссылка на страницу статьи --}}
-                <td><a href="/post/{{ $post->id }}">{{ $post->title }}</a></td>
-                <td>{{ $post->desc }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    @foreach ($posts as $post)
+        <div class="post">
+            <strong>ID: {{ $post->id }}</strong>
+            <h3>{{ $post->title }}</h3>
+            <p>{{ $post->desc }}</p>
+            <small>Дата: {{ $post->date }}</small>
+        </div>
+    @endforeach
 </body>
 </html>
