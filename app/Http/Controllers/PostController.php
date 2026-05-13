@@ -118,4 +118,19 @@ class PostController extends Controller
         
         return view('posts.updateOrCreate');
     }
+
+     // Задача 27.1 - удаление статьи
+    public function delPost($id)
+    {
+        $post = Post::find($id);
+        
+        if (!$post) {
+            abort(404, 'Статья не найдена');
+        }
+        
+        $title = $post->title;
+        $post->delete();
+        
+        return redirect('/post/all')->with('success', 'Статья "' . $title . '" успешно удалена');
+    }
 }

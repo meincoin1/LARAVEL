@@ -13,3 +13,6 @@ Route::get('/post/mass-update', [PostController::class, 'massUpdate']);
 // Задача 26.9 - другие методы создания
 Route::match(['get', 'post'], '/post/first-or-create', [PostController::class, 'firstOrCreatePost']);
 Route::match(['get', 'post'], '/post/update-or-create', [PostController::class, 'updateOrCreatePost']);
+
+// Задача 27.1 - удаление статьи
+Route::get('/post/del/{id}', [PostController::class, 'delPost']);
