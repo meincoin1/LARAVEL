@@ -25,6 +25,8 @@
             <small>Дата: {{ $post->date }}</small>
             <br>
             <a href="/post/edit/{{ $post->id }}">Редактировать</a>
+             <!-- Задача 27.2 - ссылка на удаление -->
+            <a href="/post/del/{{ $post->id }}" onclick="return confirm('Удалить статью?')">Удалить</a>
         </div>
         <hr>
     @endforeach

@@ -60,7 +60,7 @@ class PostController extends Controller
     // Задача 26.4 - список всех статей
     public function getAll()
     {
-        $posts = Post::all();
+         $posts = Post::all();
         return view('posts.all', ['posts' => $posts]);
     }
     
