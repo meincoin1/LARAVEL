@@ -3,14 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    // Задача 26.8 - для массового заполнения
+    use SoftDeletes;
+    
     protected $fillable = [
         'title',
-        'desc', 
+        'desc',
         'date',
         'text'
     ];
+    
+    protected $dates = ['deleted_at'];
 }
