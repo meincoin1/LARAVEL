@@ -6,14 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $table = 'posts';
-    
+    // Задача 26.8 - для массового заполнения
     protected $fillable = [
         'title',
-        'desc',
-        'text',
-        'date'
+        'desc', 
+        'date',
+        'text'
     ];
-    
-    public $timestamps = true;
 }

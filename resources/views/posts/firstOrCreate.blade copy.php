@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Новая статья</title>
+    <title>FirstOrCreate</title>
 </head>
 <body>
-    <h1>Создание новой статьи</h1>
+    <h1>FirstOrCreate - найти или создать статью</h1>
     
     <form action="" method="POST">
+        <p>ID (оставьте пустым для создания новой):</p>
+        <input name="id">
+        
         <p>Название:</p>
         <input name="title">
         
@@ -20,7 +23,7 @@
         <textarea name="text"></textarea>
         
         <br>
-        <input name="submit" type="submit" value="Сохранить">
+        <input name="submit" type="submit" value="Найти или создать">
     </form>
     
     <a href="/post/all">Назад к списку</a>

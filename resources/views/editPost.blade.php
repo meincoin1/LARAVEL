@@ -7,8 +7,7 @@
     <h1>Редактирование статьи</h1>
     
     <form action="" method="POST">
-        
-        <p>Название статьи:</p>
+        <p>Название:</p>
         <input name="title" value="{{ $post->title }}">
         
         <p>Описание:</p>
@@ -17,11 +16,13 @@
         <p>Дата:</p>
         <input name="date" value="{{ $post->date }}">
         
-        <p>Текст статьи:</p>
+        <p>Текст:</p>
         <textarea name="text">{{ $post->text }}</textarea>
         
         <br>
         <input name="submit" type="submit" value="Сохранить изменения">
     </form>
+    
+    <a href="/post/all">Назад к списку</a>
 </body>
 </html>
