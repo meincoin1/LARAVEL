@@ -16,3 +16,4 @@ Route::match(['get', 'post'], '/post/update-or-create', [PostController::class, 
 
 // Задача 27.1 - удаление статьи
 Route::get('/post/del/{id}', [PostController::class, 'delPost']);
+
