@@ -133,4 +133,11 @@ class PostController extends Controller
         
         return redirect('/post/all')->with('success', 'Статья "' . $title . '" успешно удалена');
     }
+
+    // Задача 27.4 - список удаленных статей
+    public function getDeletedPost()
+    {
+         $deletedPosts = Post::onlyTrashed()->get();
+         return view('posts.deleted', ['posts' => $deletedPosts]);
+    }
 }
