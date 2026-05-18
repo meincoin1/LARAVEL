@@ -1,24 +1,9 @@
 <?php
 
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
-Route::get('/post/all', [PostController::class, 'getAll']);
-Route::match(['get', 'post'], '/post/new', [PostController::class, 'newPost']);
-Route::get('/post/change-first', [PostController::class, 'changeFirstPost']);
-Route::match(['get', 'post'], '/post/edit/{id}', [PostController::class, 'editPost']);
+// Задача 28.2 - маршрут для получения пользователя с профилем
+Route::get('/user/{id}/profile', [UserController::class, 'getUserWithProfile']);
 
-// Задача 26.8 - массовые изменения
-Route::get('/post/mass-update', [PostController::class, 'massUpdate']);
-
-// Задача 26.9 - другие методы создания
-Route::match(['get', 'post'], '/post/first-or-create', [PostController::class, 'firstOrCreatePost']);
-Route::match(['get', 'post'], '/post/update-or-create', [PostController::class, 'updateOrCreatePost']);
-
-// Задача 27.1 - удаление статьи (с мягким удалением)
-Route::get('/post/del/{id}', [PostController::class, 'delPost']);
-
-// Задача 27.4 - список удаленных статей
-Route::get('/post/deleted', [PostController::class, 'getDeletedPost']);
-
-// Задача 27.5 - восстановление статьи
-Route::get('/post/restore/{id}', [PostController::class, 'restorePost']);
+// Задача 28.3 - маршрут для всех пользователей с профилями
+Route::get('/users/profiles', [UserController::class, 'getAllUsersWithProfiles']);
