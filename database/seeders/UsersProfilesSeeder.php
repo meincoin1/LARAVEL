@@ -14,14 +14,22 @@ class UsersProfilesSeeder extends Seeder
         
         DB::table('profiles')->truncate();
         DB::table('users')->truncate();
+        DB::table('cities')->truncate();
         
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        
+        DB::table('cities')->insert([
+            ['id' => 1, 'name' => 'Москва', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 2, 'name' => 'Санкт-Петербург', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 3, 'name' => 'Новосибирск', 'created_at' => now(), 'updated_at' => now()],
+        ]);
         
         DB::table('users')->insert([
             [
                 'id' => 1,
                 'login' => 'ivan123',
                 'password' => Hash::make('password123'),
+                'city_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -29,6 +37,7 @@ class UsersProfilesSeeder extends Seeder
                 'id' => 2,
                 'login' => 'petr456',
                 'password' => Hash::make('password456'),
+                'city_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -36,6 +45,7 @@ class UsersProfilesSeeder extends Seeder
                 'id' => 3,
                 'login' => 'maria789',
                 'password' => Hash::make('password789'),
+                'city_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -43,6 +53,7 @@ class UsersProfilesSeeder extends Seeder
                 'id' => 4,
                 'login' => 'alexey111',
                 'password' => Hash::make('password111'),
+                'city_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -50,6 +61,7 @@ class UsersProfilesSeeder extends Seeder
                 'id' => 5,
                 'login' => 'elena222',
                 'password' => Hash::make('password222'),
+                'city_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

@@ -7,3 +7,7 @@ Route::get('/user/{id}/profile', [UserController::class, 'getUserWithProfile']);
 
 // Задача 28.3 - маршрут для всех пользователей с профилями
 Route::get('/users/profiles', [UserController::class, 'getAllUsersWithProfiles']);
+
+Route::get('/user/{id}/city', [UserController::class, 'getUserWithCity']);
+
+Route::get('/users/cities', [UserController::class, 'getAllUsersWithCities']);
