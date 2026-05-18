@@ -20,3 +20,6 @@ class AddSoftDeletesToPostsTable extends Migration
         });
     }
 }
+
+
+
