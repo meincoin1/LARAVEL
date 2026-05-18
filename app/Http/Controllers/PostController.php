@@ -60,7 +60,8 @@ class PostController extends Controller
     // Задача 26.4 - список всех статей
     public function getAll()
     {
-         $posts = Post::all();
+        // Задача 27.3 - получаем только НЕудаленные статьи (мягкое удаление)
+        $posts = Post::all(); // По умолчанию all() не возвращает мягко удаленные
         return view('posts.all', ['posts' => $posts]);
     }
     
@@ -119,25 +120,50 @@ class PostController extends Controller
         return view('posts.updateOrCreate');
     }
 
-     // Задача 27.1 - удаление статьи
+    // Задача 27.1 - удаление статьи (жесткое удаление через delete)
     public function delPost($id)
     {
+        // Задача 27.1 - находим статью по id
         $post = Post::find($id);
         
         if (!$post) {
             abort(404, 'Статья не найдена');
         }
         
+        // Задача 27.2 - сохраняем название для флеш-сообщения
         $title = $post->title;
+        
+        // Задача 27.1 - удаляем статью
+        // Задача 27.3 - при использовании SoftDeletes это будет МЯГКОЕ удаление
         $post->delete();
         
+        // Задача 27.2 - редирект с флеш-сообщением, содержащим title
         return redirect('/post/all')->with('success', 'Статья "' . $title . '" успешно удалена');
     }
 
-    // Задача 27.4 - список удаленных статей
+    // Задача 27.4 - вывод списка удаленных статей
     public function getDeletedPost()
     {
-         $deletedPosts = Post::onlyTrashed()->get();
-         return view('posts.deleted', ['posts' => $deletedPosts]);
+        // Задача 27.4 - onlyTrashed() получает только мягко удаленные записи
+        $deletedPosts = Post::onlyTrashed()->get();
+        return view('posts.deleted', ['posts' => $deletedPosts]);
+    }
+    
+    // Задача 27.5 - восстановление удаленной статьи
+    public function restorePost($id)
+    {
+        // Задача 27.5 - находим удаленную статью среди мягко удаленных
+        $post = Post::onlyTrashed()->find($id);
+        
+        if (!$post) {
+            abort(404, 'Удаленная статья не найдена');
+        }
+        
+        $title = $post->title;
+        
+        // Задача 27.5 - восстанавливаем статью
+        $post->restore();
+        
+        return redirect('/post/deleted')->with('success', 'Статья "' . $title . '" успешно восстановлена');
     }
 }

@@ -14,8 +14,11 @@ Route::get('/post/mass-update', [PostController::class, 'massUpdate']);
 Route::match(['get', 'post'], '/post/first-or-create', [PostController::class, 'firstOrCreatePost']);
 Route::match(['get', 'post'], '/post/update-or-create', [PostController::class, 'updateOrCreatePost']);
 
-// Задача 27.1 - удаление статьи
+// Задача 27.1 - удаление статьи (с мягким удалением)
 Route::get('/post/del/{id}', [PostController::class, 'delPost']);
 
-//Задача 27.4 - список удаленных
+// Задача 27.4 - список удаленных статей
 Route::get('/post/deleted', [PostController::class, 'getDeletedPost']);
+
+// Задача 27.5 - восстановление статьи
+Route::get('/post/restore/{id}', [PostController::class, 'restorePost']);

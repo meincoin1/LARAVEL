@@ -17,6 +17,8 @@
     <a href="/post/mass-update">Массовое обновление</a>
     <a href="/post/first-or-create">FirstOrCreate</a>
     <a href="/post/update-or-create">UpdateOrCreate</a>
+    <!-- Задача 27.4 - ссылка на список удаленных статей -->
+    <a href="/post/deleted">Корзина (удаленные статьи)</a>
     
     @foreach ($posts as $post)
         <div>
@@ -25,8 +27,8 @@
             <small>Дата: {{ $post->date }}</small>
             <br>
             <a href="/post/edit/{{ $post->id }}">Редактировать</a>
-             <!-- Задача 27.2 - ссылка на удаление -->
-            <a href="/post/del/{{ $post->id }}" onclick="return confirm('Удалить статью?')">Удалить</a>
+            <!-- Задача 27.2 - ссылка на удаление с подтверждением -->
+            <a href="/post/del/{{ $post->id }}" onclick="return confirm('Удалить статью «{{ $post->title }}»?')">Удалить</a>
         </div>
         <hr>
     @endforeach
