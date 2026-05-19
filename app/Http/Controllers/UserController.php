@@ -3,30 +3,49 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\City;
 
 class UserController extends Controller
 {
-    // Задача 28.5 - получить пользователя с городом
-public function getUserWithCity($id)
-{
-    $user = User::with('city')->find($id);
-    
-    if (!$user) {
-        return response()->json(['error' => 'Пользователь не найден'], 404);
+    public function getUserWithProfile($id)
+    {
+        $user = User::with('profile')->find($id);
+        return response()->json($user);
     }
     
-    return response()->json([
-        'id' => $user->id,
-        'login' => $user->login,
-        'city' => $user->city ? $user->city->name : null
-    ]);
-}
+    public function getAllUsersWithProfiles()
+    {
+        $users = User::with('profile')->get();
+        return view('users_with_profiles', ['users' => $users]);
+    }
+    
+    public function getUserWithCity($id)
+    {
+        $user = User::with('city')->find($id);
+        return response()->json($user);
+    }
+    
+    public function getAllUsersWithCities()
+    {
+        $users = User::with('city')->get();
+        return view('users_with_cities', ['users' => $users]);
+    }
+    
+    public function getAllCitiesWithCountries()
+    {
+        $cities = City::with('country')->get();
+        return view('cities_with_countries', ['cities' => $cities]);
+    }
+    
+    public function getAllUsersWithCitiesAndCountries()
+    {
+        $users = User::with('city.country')->get();
+        return view('users_with_cities_countries', ['users' => $users]);
+    }
 
-// Задача 28.6 - получить всех пользователей с городами
-public function getAllUsersWithCities()
+    public function getAllCountriesWithCities()
 {
-    $users = User::with('city')->get();
-    return view('users_with_cities', ['users' => $users]);
+    $countries = \App\Models\Country::with('cities')->get();
+    return view('countries_with_cities', ['countries' => $countries]);
 }
 }

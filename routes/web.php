@@ -11,3 +11,7 @@ Route::get('/users/profiles', [UserController::class, 'getAllUsersWithProfiles']
 Route::get('/user/{id}/city', [UserController::class, 'getUserWithCity']);
 
 Route::get('/users/cities', [UserController::class, 'getAllUsersWithCities']);
+
+Route::get('/cities/countries', [UserController::class, 'getAllCitiesWithCountries']);
+
+Route::get('/countries/cities', [UserController::class, 'getAllCountriesWithCities']);
