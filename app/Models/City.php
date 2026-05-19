@@ -8,14 +8,14 @@ class City extends Model
 {
     protected $fillable = ['name', 'country_id'];
     
-    public function users()
-    {
-        return $this->hasMany(User::class);
-    }
-    
-    // Задача 28.7 - связь belongsTo со страной
+    // Обратная связь belongsTo
     public function country()
     {
         return $this->belongsTo(Country::class, 'country_id', 'id');
+    }
+    
+    public function users()
+    {
+        return $this->hasMany(User::class);
     }
 }

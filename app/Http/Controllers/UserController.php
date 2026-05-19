@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\City;
+use App\Models\Country;
 
 class UserController extends Controller
 {
@@ -42,10 +43,11 @@ class UserController extends Controller
         $users = User::with('city.country')->get();
         return view('users_with_cities_countries', ['users' => $users]);
     }
-
+    
+    // Задача 28.11
     public function getAllCountriesWithCities()
-{
-    $countries = \App\Models\Country::with('cities')->get();
-    return view('countries_with_cities', ['countries' => $countries]);
-}
+    {
+        $countries = Country::with('cities')->get();
+        return view('countries_with_cities', ['countries' => $countries]);
+    }
 }

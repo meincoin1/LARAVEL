@@ -15,3 +15,5 @@ Route::get('/users/cities', [UserController::class, 'getAllUsersWithCities']);
 Route::get('/cities/countries', [UserController::class, 'getAllCitiesWithCountries']);
 
 Route::get('/countries/cities', [UserController::class, 'getAllCountriesWithCities']);
+
+Route::get('/countries/cities1', [UserController::class, 'getAllCountriesWithCities']);
