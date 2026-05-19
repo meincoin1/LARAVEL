@@ -5,7 +5,6 @@
 </head>
 <body>
     <h1>Список стран с городами</h1>
-    
     @foreach($countries as $country)
     <div>
         <h2>{{ $country->name }}</h2>
@@ -18,7 +17,5 @@
     </div>
     <hr>
     @endforeach
-    
-    <a href="/users/cities">Назад</a>
 </body>
 </html>

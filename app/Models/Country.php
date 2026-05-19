@@ -13,4 +13,17 @@ class Country extends Model
     {
         return $this->hasMany(City::class, 'country_id', 'id');
     }
+    
+    // Задача 28.12 - связь hasManyThrough для получения пользователей через города
+    public function users()
+    {
+        return $this->hasManyThrough(
+            User::class,
+            City::class,
+            'country_id',
+            'city_id',   
+            'id',        
+            'id'        
+        );
+    }
 }

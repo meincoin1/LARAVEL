@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,10 +11,10 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('login');
             $table->string('password');
+            $table->foreignId('city_id')->nullable()->constrained();
             $table->timestamps();
         });
     }
-
     public function down()
     {
         Schema::dropIfExists('users');

@@ -5,28 +5,19 @@
 </head>
 <body>
     <h1>Список городов со странами</h1>
-    
-    <table border="1" cellpadding="10" cellspacing="0">
+    <table border="1" cellpadding="10">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Город</th>
-                <th>Страна</th>
-            </tr>
+            <tr><th>ID</th><th>Город</th><th>Страна</th></tr>
         </thead>
         <tbody>
             @foreach($cities as $city)
             <tr>
                 <td>{{ $city->id }}</td>
                 <td>{{ $city->name }}</td>
-                <td>{{ $city->country->name ?? 'Не указана' }}</td>
+                <td>{{ $city->country->name ?? '-' }}</td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    
-    <p><strong>Всего городов:</strong> {{ $cities->count() }}</p>
-    
-    <a href="/users/cities">Назад к списку пользователей</a>
 </body>
 </html>
